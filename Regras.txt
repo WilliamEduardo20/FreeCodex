@@ -1,0 +1,12 @@
+1° Cada Página na sua devida Pasta
+2° Nome de Página sempre em Inglês
+3° Seguir formatação padrão da Linguagem Utilizada
+4° Classes sempre em Português
+5° Id sempre em Inglês
+6° Variável sempre em Português
+7° Dar nomes condinzentes as devidas Coisas
+8° Sempre fazer comentarios para cada Função Criada
+9° Sempre que terminar de fazer algo fazer um Comit no github
+10° Seguir Formatação de Comit
+    hora/minuto data exemplo: 18:47 12/01/2024 
+    Escrever as mudanças realizadas
