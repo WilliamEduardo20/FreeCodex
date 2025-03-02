@@ -1,0 +1,1 @@
+aqui contem funcões auxiliares e utilitarias

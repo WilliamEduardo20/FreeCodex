@@ -1,3 +1,4 @@
+Regras:
 1° Cada Página na sua devida Pasta
 2° Nome de Página sempre em Inglês
 3° Seguir formatação padrão da Linguagem Utilizada
@@ -10,3 +11,24 @@
 10° Seguir Formatação de Comit
     hora/minuto data exemplo: 18:47 12/01/2024 
     Escrever as mudanças realizadas
+
+Arvore de Pasta:
+assets/ → Armazena arquivos estáticos (imagens, fontes, ícones, etc.).
+
+src/ → Contém o código-fonte principal do projeto.
+
+public/ → Guarda arquivos públicos acessíveis pelo navegador, como index.html.
+
+config/ → Armazena configurações da aplicação, como banco de dados e variáveis de ambiente.
+
+models/ → Define a estrutura dos dados no banco de dados.
+
+controllers/ → Contém a lógica de negócio do projeto.
+
+views/ → Armazena os arquivos de interface do usuário (HTML, templates).
+
+routes/ → Define as rotas da aplicação.
+
+services/ → Gerencia integrações com APIs e serviços externos.
+
+utils/ ou helpers/ → Contém funções auxiliares e utilitárias.
