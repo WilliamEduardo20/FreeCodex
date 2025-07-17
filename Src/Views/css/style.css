@@ -10,13 +10,19 @@ body{
 
 /*Menu Navegação Lateral*/
 nav.menu-lateral{
-    width: 300px;
+    width: 72px;
     height: 100vh;
     background-color: #1F74FF;
     padding: 30px 0 30px;
+
     position: fixed;
     top: 0;
     left: 0;
+    overflow: hidden;
+    transition: .5s;
+}
+nav.menu-lateral.expandir{
+    width: 250px;
 }
 
 .btn-expandir{
@@ -33,6 +39,9 @@ ul{
     height: 100%;
     list-style-type: none;
 }
+ul li.ativo a{
+    background-color: white;
+}
 ul li.item-menu a{
     color: black;
     text-decoration: none;
@@ -48,7 +57,13 @@ ul li.item-menu:hover a{
     background-color: white;
 }
 ul li.item-menu a .txt-link{
+    margin-left: 70px;
+    transition: .5s;
+    opacity: 0;
+}
+nav.menu-lateral.expandir .txt-link{
     margin-left: 40px;
+    opacity: 1;
 }
 ul li.item-menu a .icon > i{
     font-size: 30px;
