@@ -18,4 +18,5 @@ var menuLat = document.querySelector(".menu-lateral");
 
 btnExp.addEventListener('click', () => {
     menuLat.classList.toggle("expandir");
+    btnExp.classList.toggle("ativo");
 });

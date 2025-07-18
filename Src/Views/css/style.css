@@ -19,7 +19,7 @@ nav.menu-lateral{
     top: 0;
     left: 0;
     overflow: hidden;
-    transition: .5s;
+    transition: .6s;
 }
 nav.menu-lateral.expandir{
     width: 250px;
@@ -27,12 +27,34 @@ nav.menu-lateral.expandir{
 
 .btn-expandir{
     width: 100%;
-    padding-left: 18px;
 }
-.btn-expandir > i{
-    color: black;
-    font-size: 34px;
+.linhas{
+    padding-left: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
     cursor: pointer;
+    transition: .5s;
+}
+.linhas > .linha-1, .linha-2, .linha-3{
+    background-color: black;
+    width: 25px;
+    height: 2px;
+    transition: .5s;
+}
+.linhas.ativo{
+    padding-left: 10px;
+}
+.linhas.ativo > .linha-1{
+    transform: rotate(45deg) translate(30%);
+    width: 35px;
+}
+.linhas.ativo > .linha-2{
+    opacity: 0;
+}
+.linhas.ativo > .linha-3{
+    transform: rotate(-45deg) translate(30%);
+    width: 35px;
 }
 
 ul{
