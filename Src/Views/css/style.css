@@ -1,3 +1,13 @@
+/*Váriaveis de cores*/
+:root {
+  --cor-principal: #080F24;
+  --cor-secundaria: #1E3A8A;
+  --cor-terciaria: #1F74FF;
+  --cor-negrito: black;
+  --cor-destaque: white;
+}
+
+/*Configurações da Página*/
 *{
     margin: 0;
     padding: 0;
@@ -6,15 +16,20 @@
 
 body{
     height: 100vh;
-    background: linear-gradient(to bottom, #1E3A8A, #080F24);
-    overflow: hidden; /*CUIDADO*/
+    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
+}
+
+/*Clases de uso Geral*/
+.esp-lat-ext{
+    margin-left: 172px;
+    margin-right: 100px;
 }
 
 /*Menu Navegação Lateral*/
 nav.menu-lateral{
     width: 72px;
     height: 100vh;
-    background-color: #1F74FF;
+    background-color: var(--cor-terciaria);
     padding: 30px 0 30px;
 
     position: fixed;
@@ -39,7 +54,7 @@ nav.menu-lateral .linhas{
     transition: .5s;
 }
 nav.menu-lateral .linhas > .linha-1, .linha-2, .linha-3{
-    background-color: black;
+    background-color: var(--cor-negrito);
     width: 25px;
     height: 2px;
     transition: .5s;
@@ -64,10 +79,10 @@ nav.menu-lateral ul{
     list-style-type: none;
 }
 nav.menu-lateral ul li.ativo a{
-    background-color: white;
+    background-color: var(--cor-destaque);
 }
 nav.menu-lateral ul li.item-menu a{
-    color: black;
+    color: var(--cor-negrito);
     text-decoration: none;
     font-size: 22px;
     margin: 30px 10px;
@@ -78,14 +93,14 @@ nav.menu-lateral ul li.item-menu a{
     transition: .5s;
 }
 nav.menu-lateral ul li.item-menu:hover a{
-    background-color: white;
+    background-color: var(--cor-destaque);
 }
 nav.menu-lateral ul li.item-menu a .txt-link{
     margin-left: 70px;
     transition: .5s;
     opacity: 0;
 }
-nav.menu-lateral.expandir .txt-link{
+nav.menu-lateral.expandir ul li.item-menu a .txt-link{
     margin-left: 40px;
     opacity: 1;
 }
@@ -95,17 +110,20 @@ nav.menu-lateral ul li.item-menu a .icon > i{
 
 /*Menu de Navegação Mobile*/
 aside{
-    height: calc(100vh - 18px);
+    height: 105px;
+    width: 100%;
     display: flex;
     align-items: end;
     justify-content: center;
     overflow: hidden;
+    position: absolute;
+    bottom: 0;
 }
 
 .navegacao{
     width: 100%;
     height: 70px;
-    background-color: #1F74FF;
+    background-color: var(--cor-terciaria);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -138,7 +156,7 @@ aside{
     display: block;
     line-height: 75px;
     font-size: 25px;
-    color: black;
+    color: var(--cor-negrito);
     position: relative;
     transition: .5s;
 }
@@ -146,7 +164,7 @@ aside{
     transform: translateY(-35px);
 }
 .navegacao ul li a .texto{
-    color: black;
+    color: var(--cor-negrito);
     position: absolute;
     opacity: 0;
     transition: .5s;
@@ -160,7 +178,7 @@ aside{
 .indicador{
     width: 70px;
     height: 70px;
-    background-color: white;
+    background-color: var(--cor-destaque);
     border-radius: 50%;
     position: absolute;
     top: -50%;
@@ -178,4 +196,47 @@ aside{
 }
 .navegacao ul li:nth-child(4).ativo ~ .indicador{
     transform: translateX(calc(35px * 3));
+}
+
+/*Barra de Pesquisa*/
+.caixa-busca{
+    width: 100%;
+    height: 40px;
+    background-color: var(--cor-destaque);
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 100px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.caixa-busca .lupa-buscar, .caixa-busca .btn-fechar{
+    min-height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.caixa-busca .lupa-buscar i{
+    font-size: 16px;
+}
+.caixa-busca .btn-fechar i{
+    margin-top: 2px;
+    font-size: 26px;
+}
+
+.caixa-busca .input-buscar{
+    margin-left: 1px;
+    margin-top: 1px;
+    width: 100%;
+    height: 100%;
+    line-height: 38px;
+}
+.caixa-busca .input-buscar input{
+    border: 0;
+    outline: 0;
+    font-size: 16px;
+    width: 100%;
 }
