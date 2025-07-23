@@ -116,7 +116,7 @@ aside{
     align-items: end;
     justify-content: center;
     overflow: hidden;
-    position: absolute;
+    position: fixed;
     bottom: 0;
 }
 
@@ -186,7 +186,7 @@ aside{
 }
 
 .navegacao ul li:nth-child(1).ativo ~ .indicador{
-    transform: translateX(calc(-105px));
+    transform: translateX(calc(-104px));
 }
 .navegacao ul li:nth-child(2).ativo ~ .indicador{
     transform: translateX(calc(-35px * 1));
