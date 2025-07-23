@@ -243,6 +243,12 @@ aside{
 
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {
+    /*Desativa Classes Globais*/
+    .esp-lat-ext{
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
     /*Desativa Menu Navegação Lateral*/
     nav.menu-lateral{
         width: 0px;
