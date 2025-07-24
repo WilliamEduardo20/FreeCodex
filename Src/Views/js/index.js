@@ -6,7 +6,6 @@ function atualizarMenus() {
     const bool = pagina.offsetWidth > 730;
     menuHor(bool);
     menuLat(bool);
-    console.log(pagina.offsetWidth);
 }
 
 window.addEventListener('resize', atualizarMenus);

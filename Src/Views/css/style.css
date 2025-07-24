@@ -3,6 +3,7 @@
   --cor-principal: #080F24;
   --cor-secundaria: #1E3A8A;
   --cor-terciaria: #1F74FF;
+  --cor-quartenaria: #595959;
   --cor-negrito: black;
   --cor-destaque: white;
 }
@@ -23,6 +24,14 @@ body{
 .esp-lat-ext{
     margin-left: 172px;
     margin-right: 100px;
+}
+.esp-inf-ext{
+    margin-bottom: 25px;
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 /*Menu Navegação Lateral*/
@@ -241,6 +250,42 @@ aside{
     width: 100%;
 }
 
+/*Card de Codigo*/
+.container .card{
+    width: calc(50% - 5px);
+    position: relative;
+}
+
+.container .card .fundo{
+    position: absolute;
+    width: 100%;
+}
+.container .card .opcoes{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    background-color: var(--cor-destaque);
+    padding: 5px;
+    margin-top: 38%;
+    font-size: clamp(14px, 2.5vw, 14px);
+}
+
+.container .card .opcoes .info{
+    display: flex;
+    gap: 10px;
+}
+.container .card .opcoes .botoes{
+    display: flex;
+    align-items: center;
+    padding-top: 3px;
+    gap: 10px;
+}
+.container .card .opcoes .botoes > i{
+    font-size: clamp(20px, 2.5vw, 20px);
+    cursor: pointer;
+}
+
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {
     /*Desativa Classes Globais*/
@@ -257,5 +302,10 @@ aside{
     /*Ativa Menu de Navegação Mobile*/
     aside{
         height: 105px;
+    }
+
+    /*Ajusta tamanho card*/
+    .container .card{
+        width: 100%;
     }
 }
