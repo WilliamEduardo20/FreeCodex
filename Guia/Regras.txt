@@ -19,7 +19,7 @@ assets/ → Armazena arquivos estáticos (imagens, fontes, ícones, etc.).
 
 config/ → Armazena configurações da aplicação, como banco de dados e variáveis de ambiente.
 
-public/ → Guarda arquivos públicos acessíveis pelo navegador, como index.html.
+public/ → Guarda arquivos públicos acessíveis pelo navegador, como index.html
 
 services/ → Gerencia integrações com APIs e serviços externos.
 
