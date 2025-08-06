@@ -16,7 +16,6 @@
 }
 
 body{
-    height: 100vh;
     background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
 }
 
@@ -25,13 +24,42 @@ body{
     margin-left: 172px;
     margin-right: 100px;
 }
-.esp-inf-ext{
-    margin-bottom: 25px;
+
+.mar-top10{
+    margin-top: 10px;
 }
+.mar-bott10{
+    margin-bottom: 10px;
+}
+
 .container{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+/*Configuração Banner*/
+.banner{
+    width: 100%;
+    border-radius: 15px;
+}
+
+/*Corpo do Site*/
+main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*Botão Ver Mais*/
+.btn-ver-mais{
+    width: 70%;
+    height: 30px;
+    border: none;
+    border-radius: 5px;
+    background: linear-gradient(to right, var(--cor-terciaria), var(--cor-secundaria));
+    color: var(--cor-destaque);
+    cursor: pointer;
 }
 
 /*Menu Navegação Lateral*/
@@ -250,40 +278,47 @@ aside{
     width: 100%;
 }
 
-/*Card de Codigo*/
-.container .card{
-    width: calc(50% - 5px);
+/*Card de Codigo/Componente*/
+.componente{
+    width: calc(50% - 10px);
     position: relative;
 }
 
-.container .card .fundo{
-    position: absolute;
+.componente-imagem{
     width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 5px 2px var(--cor-negrito);
 }
-.container .card .opcoes{
+
+.componente-info{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    position: absolute;
     background-color: var(--cor-destaque);
-    padding: 5px;
-    margin-top: 38%;
-    font-size: clamp(14px, 2.5vw, 14px);
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 30px;
+}
+.componente-tipos{
+    display: flex;
+    flex-direction: row;
+    cursor: pointer;
+    padding: 8px;
+    gap: 5px;
 }
 
-.container .card .opcoes .info{
-    display: flex;
-    gap: 10px;
-}
-.container .card .opcoes .botoes{
-    display: flex;
-    align-items: center;
-    padding-top: 3px;
-    gap: 10px;
-}
-.container .card .opcoes .botoes > i{
-    font-size: clamp(20px, 2.5vw, 20px);
+.componente-btn{
+    padding: 10px;
+    margin-right: 8px;
+    background-color: var(--cor-quartenaria);
+    clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    border: none;
     cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 /*Configuração da Página para Mobile*/
@@ -292,6 +327,11 @@ aside{
     .esp-lat-ext{
         margin-left: 15px;
         margin-right: 15px;
+    }
+    main .container{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
     }
 
     /*Desativa Menu Navegação Lateral*/
@@ -305,7 +345,12 @@ aside{
     }
 
     /*Ajusta tamanho card*/
-    .container .card{
+    .container div.componente{
         width: 100%;
+    }
+
+    /*Ajusta elementos para caber na tela*/
+    footer{
+        margin-bottom: 105px;
     }
 }
