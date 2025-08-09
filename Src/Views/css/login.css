@@ -1,0 +1,105 @@
+/*Váriaveis de cores*/
+:root {
+  --cor-principal: #080F24;
+  --cor-secundaria: #1E3A8A;
+  --cor-terciaria: #1F74FF;
+  --cor-quartenaria: #595959;
+  --cor-negrito: black;
+  --cor-destaque: white;
+}
+
+/*Configurações da Página*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*Clases de uso Geral*/
+.esp-lat-ext{
+    margin-left: 172px;
+    margin-right: 100px;
+}
+
+.mar-top10{
+    margin-top: 10px;
+}
+.mar-bott10{
+    margin-bottom: 10px;
+}
+.pad10{
+    padding: 10px;
+}
+.pad20{
+    padding: 20px;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/*Tela de Login*/
+main.login{
+    width: 60%;
+    height: 60%;
+    background-color: var(--cor-destaque);
+}
+
+main.login section{
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/*Inscreva-se*/
+main.login section .inscrever{
+    background-color: #6BA3FF;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+main.login section .inscrever .logo{
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+main.login section .inscrever .logo img{
+    width: 50px;
+}
+
+main.login section .opcoes{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+main.login section .opcoes button{
+    width: 100%;
+    height: 25px;
+}
+
+/*Logar*/
+main.login section .logar{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+main.login section .logar .info{
+    display: flex;
+    flex-direction: column;
+}
