@@ -13,6 +13,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body{
@@ -29,18 +30,11 @@ body{
     margin-right: 100px;
 }
 
-.mar-top10{
-    margin-top: 10px;
-}
-.mar-bott10{
-    margin-bottom: 10px;
-}
-.pad10{
-    padding: 10px;
-}
-.pad20{
-    padding: 20px;
-}
+.mar-top10{ margin-top: 10px; }
+.mar-bott10{ margin-bottom: 10px; }
+.pad10{ padding: 10px; }
+.pad20{ padding: 20px; }
+.pad30{ padding: 30px; }
 
 .container{
     display: flex;
@@ -49,20 +43,20 @@ body{
 }
 
 /*Tela de Login*/
-main.login{
+.login{
     width: 60%;
     height: 60%;
     background-color: var(--cor-destaque);
 }
 
-main.login section{
+.login section{
     display: flex;
     height: 100%;
     width: 100%;
 }
 
 /*Inscreva-se*/
-main.login section .inscrever{
+.login section .inscrever{
     background-color: #6BA3FF;
     width: 40%;
     height: 100%;
@@ -71,35 +65,94 @@ main.login section .inscrever{
     align-items: center;
     justify-content: space-between;
 }
-main.login section .inscrever .logo{
+
+.login section .inscrever .logo{
     display: flex;
     align-items: center;
     width: 100%;
+    gap: 5px;
 }
-main.login section .inscrever .logo img{
-    width: 50px;
+.login section .inscrever .logo img{
+    width: 25px;
+}
+.login section .inscrever .logo p{
+    font-size: 14pt;
 }
 
-main.login section .opcoes{
+.login section .inscrever h1{
+    font-size: 30pt;
+    color: var(--cor-destaque);
+}
+
+/*Opções de Login*/
+.login section .inscrever .opcoes{
     width: 100%;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-main.login section .opcoes button{
-    width: 100%;
-    height: 25px;
+.login section .inscrever .opcoes button{
+    border-radius: 100px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
 }
 
 /*Logar*/
-main.login section .logar{
+.login section .logar{
     width: 60%;
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
-main.login section .logar .info{
+.login section .logar h1{
+    font-size: xx-large;
+}
+.login section .logar a{
+    padding-top: 5px;
+    font-size: small;
+    color: #333;
+}
+
+form.form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 14px;
+}
+form.form input[type="text"],
+form.form input[type="password"] {
+    width: 100%;
+    padding: 12px 14px;
+    margin-bottom: 20px;
+    border: 1.8px solid #c3c9d9;
+    border-radius: 6px;
+    font-size: 15px;
+    color: #222;
+    transition: border-color 0.3s ease;
+}
+form.form input[type="text"]:focus,
+form.form input[type="password"]:focus {
+    outline: none;
+    border-color: #0077ff;
+    box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
+}
+form.form input::placeholder {
+    color: #51585C;
+}
+
+.login section .logar .acoes{
     display: flex;
     flex-direction: column;
+}
+.login section .logar .acoes button{
+    width: 150px;
+    height: 40px;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-destaque);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
