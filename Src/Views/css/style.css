@@ -328,7 +328,7 @@ aside{
 
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {
-    /*Desativa Classes Globais*/
+    /*Classes Globais*/
     .esp-lat-ext{
         margin-left: 15px;
         margin-right: 15px;
