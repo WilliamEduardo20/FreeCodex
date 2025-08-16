@@ -19,6 +19,7 @@
 body{
     background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
     height: 100vh;
+    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -40,6 +41,15 @@ body{
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+}
+
+.icone {
+    height: 100%;
+    border-radius: 100%;
+}
+.preto {
+    padding: 3px;
+    background-color: var(--cor-negrito);
 }
 
 /*Tela de Login*/
@@ -92,10 +102,16 @@ body{
     gap: 10px;
 }
 .login section .inscrever .opcoes button{
+    display: flex;
+    align-items: center;
     border-radius: 100px;
     height: 40px;
+    padding: 7px;
     border: none;
     cursor: pointer;
+}
+.login section .inscrever .opcoes button p{
+    width: 100%;
 }
 
 /*Logar*/
@@ -127,8 +143,7 @@ form.form label {
     color: #333;
     font-size: 14px;
 }
-form.form input[type="text"],
-form.form input[type="password"] {
+form.form input {
     width: 100%;
     padding: 12px 14px;
     margin-bottom: 20px;
@@ -138,8 +153,7 @@ form.form input[type="password"] {
     color: #222;
     transition: border-color 0.3s ease;
 }
-form.form input[type="text"]:focus,
-form.form input[type="password"]:focus {
+form.form input:focus {
     outline: none;
     border-color: #0077ff;
     box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
@@ -159,13 +173,8 @@ form.form input[type="submit"] {
 
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {
-    /*Classes Globais*/
-    .pad30 {
-        padding: 10px;
-    }
-
     /*Tela de Login*/
-    .login{
+    .login {
         width: 100%;
         height: 80%;
         background-color: var(--cor-destaque);
@@ -174,6 +183,21 @@ form.form input[type="submit"] {
     .login section{
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    /*Opções de Login*/
+    .login section .inscrever .opcoes button{
+        display: flex;
+        align-items: center;
+        border-radius: 100px;
+        height: 45px;
+        padding: 7px;
+        border: none;
+        cursor: pointer;
+    }
+    .login section .inscrever .opcoes button p{
+        width: 100%;
+        font-size: x-large;
     }
 
     /*Inscreva-se*/
@@ -200,6 +224,12 @@ form.form input[type="submit"] {
         margin-bottom: 10px;
     }
 
+    .login section .logar a{
+        padding-top: 5px;
+        font-size: 10pt;
+        color: #333;
+    }
+
     /*Logar*/
     .login section .logar{
         width: 100%;
@@ -208,6 +238,10 @@ form.form input[type="submit"] {
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
+    }
+
+    .login section .logar h1{
+        font-size: 30pt;
     }
 
     /*Formulário*/
@@ -223,7 +257,7 @@ form.form input[type="submit"] {
         font-weight: 600;
         width: 100%;
         color: #333;
-        font-size: 14px;
+        font-size: 20px;
         text-align: start;
     }
     form.form input[type="submit"] {
