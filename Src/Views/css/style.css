@@ -9,7 +9,7 @@
 }
 
 /*Configurações da Página*/
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -21,7 +21,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow: hidden;
 }
 
 /*Clases de uso Geral*/
@@ -330,8 +329,8 @@ aside{
 @media only screen and (max-width:730px) {
     /*Classes Globais*/
     .esp-lat-ext{
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 20px;
+        margin-right: 20px;
     }
     main .container{
         display: flex;
@@ -339,14 +338,14 @@ aside{
         gap: 10px;
     }
 
+    /*Corpo do Site*/
+    main {
+        margin-bottom: 105px;
+    }
+
     /*Ajusta tamanho card*/
     .container div.componente{
         width: 100%;
-    }
-
-    /*Ajuste para caber na tela*/
-    footer{
-        margin-bottom: 105px;
     }
 
     /*Desativa Menu Navegação Lateral*/
