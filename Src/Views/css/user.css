@@ -384,9 +384,9 @@ aside{
     }
     .perfil .foto-perfil i {
         position: absolute;
-        font-size: 40pt;
+        font-size: 50pt;
         color: var(--cor-secundaria);
-        top: calc(100% - 38pt);
+        top: calc(100% - 48pt);
         right: 20pt;
         cursor: pointer;
     }
