@@ -379,8 +379,8 @@ aside{
         justify-content: center;
     }
     .perfil .foto-perfil img{
-        width: 60%;
-        border-radius: 60%;
+        width: 70%;
+        border-radius: 70%;
     }
     .perfil .foto-perfil i {
         position: absolute;
@@ -423,7 +423,7 @@ aside{
         display: block;
         width: 100%;
         text-align: start;
-        margin-bottom: 11px;
+        margin-bottom: 15px;
         font-weight: 600;
         color: #333;
         font-size: 15px;
