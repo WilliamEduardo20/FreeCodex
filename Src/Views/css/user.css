@@ -359,7 +359,7 @@ aside{
         justify-content: space-around;
         background-color: var(--cor-destaque);
         border-radius: 6px;
-        width: 70%;
+        width: 80%;
         height: auto;
     }
 
@@ -431,7 +431,7 @@ aside{
     form.form input {
         width: 100%;
         padding: 10px 12px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
         border: 1.8px solid #c3c9d9;
         border-radius: 6px;
         font-size: 15px;
