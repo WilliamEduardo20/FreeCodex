@@ -340,18 +340,112 @@ aside{
 @media only screen and (max-width:730px) {
     /*Classes Globais*/
     .esp-lat-ext{
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 0px;
+        margin-right: 0px;
     }
     main .container{
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 0px;
     }
 
     /*Corpo do Site*/
     main {
         margin-bottom: 105px;
+    }
+
+    /*Página Usuário*/
+    section.container {
+        justify-content: space-around;
+        background-color: var(--cor-destaque);
+        border-radius: 6px;
+        width: 70%;
+        height: 90%;
+    }
+
+    /*Perfil do Usuário*/
+    .perfil {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: start;
+        height: auto;
+        width: 100%;
+    }
+    .perfil .foto-perfil {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .perfil .foto-perfil img{
+        width: 60%;
+        border-radius: 60%;
+    }
+    .perfil .foto-perfil i {
+        position: absolute;
+        font-size: 40pt;
+        color: var(--cor-secundaria);
+        top: calc(100% - 38pt);
+        right: 20pt;
+        cursor: pointer;
+    }
+    .perfil button {
+        width: 100%;
+        height: 0px;
+    }
+    .perfil a{
+        padding-top: 0px;
+        font-size: 10pt;
+        margin-top: 5px;
+        color: var(--cor-terciaria);
+    }
+
+    /*Linha Separadora*/
+    div.linha {
+        height: 1.2px;
+        width: 100%;
+        border-radius: 10px;
+        margin-left: 0px;
+        margin-right: 0px;
+        background-color: #999999;
+    }
+
+    /*Info Usuário*/
+    .info {
+        height: 60%;
+        width: 100%;
+    }
+
+    /*Formulário*/
+    form.form label {
+        display: block;
+        width: 100%;
+        text-align: start;
+        margin-bottom: 11px;
+        font-weight: 600;
+        color: #333;
+        font-size: 14px;
+    }
+    form.form input {
+        width: 100%;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+        border: 1.8px solid #c3c9d9;
+        border-radius: 6px;
+        font-size: 14px;
+        color: #222;
+        transition: border-color 0.3s ease;
+    }
+    form.form input[type="submit"] {
+        width: 90%;
+        height: 30px;
+        background-color: var(--cor-terciaria);
+        color: var(--cor-destaque);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        padding: 0px;
     }
 
     /*Desativa Menu Navegação Lateral*/
