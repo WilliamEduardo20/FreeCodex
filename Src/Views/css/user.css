@@ -360,7 +360,7 @@ aside{
         background-color: var(--cor-destaque);
         border-radius: 6px;
         width: 70%;
-        height: 90%;
+        height: auto;
     }
 
     /*Perfil do Usuário*/
@@ -408,12 +408,13 @@ aside{
         border-radius: 10px;
         margin-left: 0px;
         margin-right: 0px;
+        margin-top: 10px;
+        margin-bottom: 10px;
         background-color: #999999;
     }
 
     /*Info Usuário*/
     .info {
-        height: 60%;
         width: 100%;
     }
 
@@ -425,7 +426,7 @@ aside{
         margin-bottom: 11px;
         font-weight: 600;
         color: #333;
-        font-size: 14px;
+        font-size: 15px;
     }
     form.form input {
         width: 100%;
@@ -433,13 +434,13 @@ aside{
         margin-bottom: 10px;
         border: 1.8px solid #c3c9d9;
         border-radius: 6px;
-        font-size: 14px;
+        font-size: 15px;
         color: #222;
         transition: border-color 0.3s ease;
     }
     form.form input[type="submit"] {
         width: 90%;
-        height: 30px;
+        height: 35px;
         background-color: var(--cor-terciaria);
         color: var(--cor-destaque);
         border: none;
