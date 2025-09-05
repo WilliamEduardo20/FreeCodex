@@ -1,0 +1,342 @@
+/* Variáveis de cores */
+:root {
+    --cor-principal: #080F24;
+    --cor-secundaria: #1E3A8A;
+    --cor-terciaria: #1F74FF;
+    --cor-quartenaria: #595959;
+    --cor-negrito: black;
+    --cor-destaque: white;
+}
+
+/* Configurações da Página */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Verdana, sans-serif;
+}
+
+body {
+    background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Classes de uso Geral */
+.esp-lat-ext {
+    margin-left: 172px;
+    margin-right: 100px;
+}
+
+.mar-top10 { margin-top: 10px; }
+.mar-bott10 { margin-bottom: 10px; }
+.pad10 { padding: 10px; }
+.pad20 { padding: 20px; }
+.pad30 { padding: 30px; }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.icone {
+    height: 100%;
+    border-radius: 100%;
+}
+
+.preto {
+    padding: 3px;
+    background-color: var(--cor-negrito);
+}
+
+/* Tela de Cadastro */
+.cadastro {
+    width: 60%;
+    height: 60%;
+    background-color: var(--cor-destaque);
+}
+
+/* Estrutura da seção */
+.cadastro section {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+/* Inscreva-se */
+.cadastro section .logue {
+    background-color: #6BA3FF;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.cadastro section .logue .logo {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 5px;
+}
+
+.cadastro section .logue .logo img {
+    width: 25px;
+}
+
+.cadastro section .logue .logo p {
+    font-size: 14pt;
+}
+
+.cadastro section .logue h1 {
+    font-size: 30pt;
+    color: var(--cor-destaque);
+}
+
+.cadastro section .logue h2 {
+    font-size: 20pt;
+    color: var(--cor-destaque);
+}
+
+.cadastro section .logue h3 {
+    font-size: 10pt;
+    color: var(--cor-destaque);
+}
+
+/* Opções de Cadastro */
+.cadastro section .logue .opcoes {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.cadastro section .logue .opcoes button {
+    display: flex;
+    align-items: center;
+    border-radius: 100px;
+    height: 50px;
+    padding: 7px;
+    border: none;
+    cursor: pointer;
+}
+
+.cadastro section .logue .opcoes button p {
+    width: 100%;
+    font-size: 14pt;
+    padding-right: 50px;
+}
+
+/* Cadastrar */
+.cadastro section .cadastrar {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.cadastro section .cadastrar h1 {
+    font-size: 30pt;
+    font-weight: 600;
+    width: 100%;
+    text-align: start;
+    margin-bottom: 10px;
+}
+
+.cadastro section .cadastrar a {
+    padding-top: 5px;
+    font-size: small;
+    color: #333;
+}
+
+/* Formulário */
+form.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    text-align: start;
+    height: 100%;
+}
+
+form.form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #333;
+    font-size: 20px;
+}
+
+form.form input {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1.8px solid #c3c9d9;
+    border-radius: 6px;
+    font-size: 17px;
+    color: #222;
+    transition: 0.3s ease;
+    line-height: 100%;
+}
+
+form.form input:focus {
+    outline: none;
+    border-color: #0077ff;
+    box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
+}
+
+form.form input::placeholder {
+    color: #1f648b;
+}
+
+form.form input[type="submit"] {
+    width: 180px;
+    height: 45px;
+    background-color: var(--cor-terciaria);
+    color: var(--cor-destaque);
+    border: none;
+    border-radius: 5px;
+    font-size: 13pt;
+    line-height: 100%;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+form.form .showBtn {
+    position: absolute;
+    right: 14px;
+    top: 180px;
+    transform: translateY(0);
+    cursor: pointer;
+    font-size: 18px;
+    color: #333;
+    z-index: 10;
+}
+
+/* Indicador de Senha */
+form.form .indicador {
+    height: 10px;
+    display: none;
+    align-items: center;
+    justify-content: space-between;
+}
+
+form.form .indicador span {
+    width: 100%;
+    height: 100%;
+    background: lightgrey;
+    border-radius: 5px;
+    position: relative;
+    transition: 0.3s;
+}
+
+form.form .indicador span.medio {
+    margin: 0 3px;
+}
+
+form.form .indicador span.fraco.active {
+    background-color: #ff4757;
+}
+
+form.form .indicador span.medio.active {
+    background-color: orange;
+}
+
+form.form .indicador span.forte.active {
+    background-color: #23ad5c;
+}
+
+form.form .text {
+    font-size: 20px;
+    font-weight: 500;
+    display: none;
+    text-align: center;
+    width: 100%;
+}
+
+form.form .text.fraco { color: #ff4757; }
+form.form .text.medio { color: orange; }
+form.form .text.forte { color: #23ad5c; }
+
+/* Configuração da Página para Mobile */
+@media only screen and (max-width:730px) {
+    /* Tela de Cadastro */
+    .cadastro {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+    }
+
+    .cadastro section {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 80%;
+        background-color: var(--cor-destaque);
+    }
+
+    /* Inscreva-se */
+    .cadastro section .logue {
+        background-color: #6BA3FF;
+        width: 100%;
+        height: 40%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .cadastro section .logue .logo img {
+        width: 20px;
+    }
+
+    .cadastro section .logue h1 {
+        font-size: 25pt;
+        color: var(--cor-destaque);
+    }
+
+    .cadastro section .logue .opcoes button p {
+        font-size: 15pt;
+    }
+
+    /* Cadastrar */
+    .cadastro section .cadastrar {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+    .cadastro section .cadastrar h1 {
+        font-size: 30pt;
+    }
+
+    .cadastro section .cadastrar a {
+        font-size: 10pt;
+    }
+
+    /* Formulário */
+    form.form {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+
+    form.form label {
+        font-size: 20px;
+    }
+}
