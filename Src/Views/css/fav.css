@@ -128,10 +128,20 @@ main{
     gap: 5px;
 }
 
+.componente-opcoes {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    color: var(--cor-quartenaria);
+}
+.componente-opcoes i {
+    font-size: 100%;
+    cursor: pointer;
+}
 .componente-btn{
     padding: 10px;
     margin-right: 8px;
-    background-color: var(--cor-quartenaria);
+    background-color: rgb(222, 145, 0);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     border: none;
     cursor: pointer;
