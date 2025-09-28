@@ -147,9 +147,9 @@ form.form input {
 }
 form.form a {
     width: 100%;
-    margin-bottom: 20px;
     font-size: 15px;
     text-align: end;
+    margin-bottom: 7px;
     text-decoration: none;
     color: var(--cor-terciaria);
 }
@@ -167,6 +167,7 @@ form.form input[type="submit"] {
     background-color: var(--cor-terciaria);
     color: var(--cor-destaque);
     border: none;
+    margin-top: 10px;
     border-radius: 6px;
     cursor: pointer;
 }
