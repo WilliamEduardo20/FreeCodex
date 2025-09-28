@@ -139,12 +139,19 @@ form.form label {
 form.form input {
     width: 100%;
     padding: 12px 14px;
-    margin-bottom: 20px;
     border: 1.8px solid #c3c9d9;
     border-radius: 6px;
     font-size: 15px;
     color: #222;
     transition: border-color 0.3s ease;
+}
+form.form a {
+    width: 100%;
+    margin-bottom: 20px;
+    font-size: 15px;
+    text-align: end;
+    text-decoration: none;
+    color: var(--cor-terciaria);
 }
 form.form input:focus {
     outline: none;
