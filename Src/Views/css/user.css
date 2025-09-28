@@ -172,6 +172,121 @@ form.form input[type="submit"] {
     cursor: pointer;
 }
 
+/* Estilos do modal */
+.modal-container {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-conteudo {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.modal-cabecalho {
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dee2e6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-cabecalho h2 {
+    margin: 0;
+    color: #333;
+}
+
+.fechar-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.fechar-modal:hover,
+.fechar-modal:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-corpo {
+    padding: 15px;
+    text-align: center;
+}
+
+.modal-corpo iframe {
+    border-radius: 8px;
+}
+
+/* Estilo para os formulários dos modais */
+.modal-corpo form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.modal-corpo form label {
+  display: block;
+  width: 100%;
+  text-align: start;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #333;
+  font-size: 17px;
+}
+
+.modal-corpo form input[type="text"],
+.modal-corpo form input[type="password"],
+.modal-corpo form input[type="email"] {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1.8px solid #c3c9d9;
+  border-radius: 6px;
+  font-size: 15px;
+  color: #222;
+  transition: border-color 0.3s ease;
+  margin-bottom: 20px;
+}
+
+.modal-corpo form input:focus {
+  outline: none;
+  border-color: #0077ff;
+  box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
+}
+
+.modal-corpo form input::placeholder {
+  color: #51585C;
+}
+
+.modal-corpo form button[type="submit"] {
+  width: 200px;
+  height: 40px;
+  background-color: var(--cor-terciaria);
+  color: var(--cor-destaque);
+  border: none;
+  margin-top: 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
 /*Menu Navegação Lateral*/
 nav.menu-lateral{
     width: 72px;
@@ -456,6 +571,16 @@ aside{
         border-radius: 6px;
         cursor: pointer;
         padding: 0px;
+    }
+
+    /*Modal*/
+    .modal-conteudo {
+        width: 95%;
+        margin: 2% auto;
+    }
+    
+    .modal-corpo iframe {
+        height: 250px;
     }
 
     /*Desativa Menu Navegação Lateral*/
