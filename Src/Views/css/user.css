@@ -21,7 +21,6 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    overflow: hidden;
 }
 
 /*Clases de uso Geral*/
@@ -555,7 +554,6 @@ aside{
     form.form input {
         width: 100%;
         padding: 10px 12px;
-        margin-bottom: 20px;
         border: 1.8px solid #c3c9d9;
         border-radius: 6px;
         font-size: 15px;
