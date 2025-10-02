@@ -6,7 +6,31 @@
 
     switch ($method) {
         case 'GET':
-            # code...
+            $tabela = request('tabela');
+
+            if (empty($tabela)) {
+                sendResponse(400, ['message' => 'Campo Obrigatório não preenchidos']);
+                exit;
+            }
+
+            $query = "SELECT * FROM $tabela";
+            $stmt = mysqli_prepare($conn, $query);
+
+            mysqli_stmt_execute($stmt);
+            $result = mysqli_stmt_get_result($stmt);
+
+            foreach ($result as $linha) {
+                echo "<tr>";
+                echo "<td>" . htmlspecialchars($linha['nome']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['email']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['telefone']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['data_nasc']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['senha']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['data_cad']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['token']) . "</td>";
+                echo "<td>" . htmlspecialchars($linha['status']) . "</td>";
+                echo "</tr>";
+            }
             break;
         
         case 'POST':
