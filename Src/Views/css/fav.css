@@ -358,6 +358,13 @@ aside{
         width: 100%;
     }
 
+    /*Desativa a opção de copiar do card*/
+    .componente-opcoes i {
+        font-size: 100%;
+        visibility: hidden;
+        cursor: pointer;
+    }
+
     /*Desativa Menu Navegação Lateral*/
     nav.menu-lateral{
         width: 0px;
