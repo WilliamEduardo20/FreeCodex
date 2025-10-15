@@ -1,69 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>FreeCodex - Soluções Incríveis para Você</title>
-        <meta name="description" content="">
-        <meta name="robots" content="index, follow">
-        <meta name="keywords" content="">
-        <link rel="canonical" href="https://www.meusite.com.br">
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-        <link rel="stylesheet" href="../css/cadastro.css">
-    </head>
-    <body>
-
-        <main class="cadastro">
-            <section>
-                <div class="logue pad30">
-                    <div class="logo">
-                        <img src="../../Assets/icons/logo-transparente.png" alt="logo-CodePiece">
-                        <p>CodePiece</p>
-                    </div>
-                    <h1>Bem-vindo!</h1>
-                    <h3>Para continuar conectado conosco, faça login com suas informações pessoais</h3>
-                    <div class="opcoes">
-                        <button>
-                            <img class="icone preto" src="../../Assets/icons/logo.png" alt="logo-FreeCodex">
-                            <p>Fazer o login</p>
-                        </button>
-                        <h2>OU</h2>
-                        <button>
-                            <img class="icone" src="../../Assets/icons/logo-google.png" alt="logo-google">
-                            <p>Continuar com o Google</p>
-                        </button>
-                    </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CodePiece - Soluções Incríveis para Você</title>
+    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="https://www.meusite.com.br">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+<body>
+    <main class="cadastro">
+        <section>
+            <div class="logue pad30">
+                <div class="logo">
+                    <img src="../../Assets/icons/logo-transparente.png" alt="logo-CodePiece">
+                    <p>CodePiece</p>
                 </div>
-                
-                <div class="cadastrar pad30">
-                    <h1>Cadastrar</h1>
-
-                    <form class="form" id="meuFormulario" action="" method="post">
-                        <label for="usuario">Usuário</label>
-                        <input type="text" name="usuario" maxlength="20" id="usuario" placeholder="Digite seu nome" required>
-                        <label for="email">E-mail</label>
-                        <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
-                        <label for="password">Senha</label>
-                        <input onkeyup="trigger()" type="password" name="senha" maxlength="15" id="password" placeholder="Digite sua senha" required>
-                        <span class="showBtn">
-                            <i class="bi bi-eye-slash"></i>
-                        </span>
-                        <div class="indicador">
-                            <span class="fraco"></span>
-                            <span class="medio"></span>
-                            <span class="forte"></span>
-                        </div>
-                        <div class="text">Sua senha está fraca</div>
-                        <label for="confirme">Confirme a senha</label>
-                        <input type="password" name="confirme" maxlength="15" id="confirme" placeholder="Digite novamente senha" required>
-                        <p id="mensagem"></p>
-                        <input type="submit" value="Cadastrar">
-                    </form>
+                <h1>Bem-vindo!</h1>
+                <h3>Para continuar conectado conosco, faça login com suas informações pessoais</h3>
+                <div class="opcoes">
+                    <button onclick="window.location.href='/FreeCodex/Src/Views/html/login.html'">
+                        <img class="icone preto" src="../../Assets/icons/logo.png" alt="logo-FreeCodex">
+                        <p>Fazer o login</p>
+                    </button>
+                    <h2>OU</h2>
+                    <button>
+                        <img class="icone" src="../../Assets/icons/logo-google.png" alt="logo-google">
+                        <p>Continuar com o Google</p>
+                    </button>
                 </div>
+            </div>
 
-                <script src="../js/cadastro.js"></script>
-            </section>
-        </main>
+            <div class="cadastrar pad30">
+                <h1>Cadastrar</h1>
 
-    </body>
+                <form class="form" id="meuFormulario" action="" method="post">
+                    <label for="usuario">Usuário</label>
+                    <input type="text" name="usuario" id="usuario" placeholder="Digite seu nome" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="Digite seu e-mail" required>
+                    <label for="data">Data de Nascimento</label>
+                    <input type="date" name="data" id="data" required>
+                    <label for="telefone">Telefone:</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="(xx) xxxxx-xxxx">
+                    <label for="password">Senha</label>
+                    <input onkeyup="trigger()" type="password" name="senha" maxlength="16" id="password"
+                        placeholder="Digite sua senha" required>
+                    <span class="showBtn">
+                        <i class="bi bi-eye-slash"></i>
+                    </span>
+                    <div class="indicador">
+                        <span class="fraco"></span>
+                        <span class="medio"></span>
+                        <span class="forte"></span>
+                    </div>
+                    <div class="text">Sua senha está fraca</div>
+                    <label for="confirme">Confirme a senha</label>
+                    <input type="password" name="confirme" maxlength="15" id="confirme"
+                        placeholder="Digite novamente senha" required>
+                    <p id="mensagem"></p>
+                    <input type="submit" value="Cadastrar">
+                </form>
+            </div>
+
+            <script src="../js/cadastro.js"></script>
+        </section>
+    </main>
+</body>
 </html>
