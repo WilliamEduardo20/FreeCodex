@@ -6,7 +6,7 @@
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
-    $query = "SELECT id, nome, email, telefone, data_nasc, token, status FROM usuario WHERE email = ?";
+    $query = "SELECT Id, Nome, Email, Telefone, DataNasc, Token, Status FROM usuarios WHERE Email = ?";
     $stmt = mysqli_prepare($conn, $query);
 
     mysqli_stmt_bind_param($stmt, 's', $email);
@@ -15,21 +15,21 @@
 
     if ($row = mysqli_fetch_assoc($result)) {
         if (password_verify($senha, $row['senha'] && $row['status'] === 'a')) {
-           $_SESSION['id'] = $row['id'];
-           $_SESSION['nome'] = $row['nome'];
-           $_SESSION['email'] = $row['email'];
-           $_SESSION['telefone'] = $row['telefone'];
-           $_SESSION['nascimento'] = $row['data_nasc'];
-           $_SESSION['token'] = $row['token'];
-           $_SESSION['status'] = $row['status'];
+           $_SESSION['id'] = $row['Id'];
+           $_SESSION['nome'] = $row['Nome'];
+           $_SESSION['email'] = $row['Email'];
+           $_SESSION['telefone'] = $row['Telefone'];
+           $_SESSION['nascimento'] = $row['DataNasc'];
+           $_SESSION['token'] = $row['Token'];
+           $_SESSION['status'] = $row['Status'];
            header('Location: /caminho/index.html');
            exit;
         } else {
-            header('Location: /caminho/login.html?login=erro');
+            header('Location: /FreeCodex/Src/Views/html/login.html?login=erro');
             exit;
         }
     } else {
-        header('Location: /caminho/login.html?login=erro');
+        header('Location: /FreeCodex/Src/Views/html/login.html?Erro=email-ou-senha-incorretos');
         exit;
     }
 

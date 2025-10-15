@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once('../../Utils/verifyAccess.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -116,7 +121,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="./fav.html">
+                    <a href="./fav.php">
                         <span class="icon">
                             <i class="bi bi-star-fill"></i>
                         </span>
@@ -153,7 +158,7 @@
                     </a>
                 </li>
                 <li class="lista">
-                    <a href="./fav.html">
+                    <a href="./fav.php">
                         <span class="icone">
                             <i class="bi bi-star-fill"></i>
                         </span>

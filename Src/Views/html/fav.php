@@ -1,3 +1,8 @@
+<?php
+    session_start();
+    require_once('../../Utils/verifyAccess.php');
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -125,7 +130,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="./user.html">
+                    <a href="./user.php">
                         <span class="icon">
                             <i class="bi bi-person-circle"></i>
                         </span>
@@ -162,7 +167,7 @@
                     </a>
                 </li>
                 <li class="lista">
-                    <a href="./user.html">
+                    <a href="./user.php">
                         <span class="icone">
                             <i class="bi bi-person-circle"></i>
                         </span>

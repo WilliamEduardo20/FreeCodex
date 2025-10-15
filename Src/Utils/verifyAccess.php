@@ -1,6 +1,6 @@
 <?php
-    require_once('./app/httpHelper.php');
-    require_once('../Config/conection.php');
+    require_once __DIR__ . '/app/tokenHelper.php';
+    require_once __DIR__ . '/../Config/conection.php';
 
     getUserByToken($conn);
 ?>

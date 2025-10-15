@@ -1,5 +1,5 @@
 <?php
-    require_once 'httpHelper.php';
+    require_once __DIR__ . '/httpHelper.php';
 
     //Coleta token do Usuário
     function getToken() {
@@ -15,11 +15,11 @@
     function getUserByToken($conn) {
         $token = getToken();
 
-        $result = mysqli_query($conn, "SELECT * FROM usuario WHERE token='$token");
+        $result = mysqli_query($conn, "SELECT * FROM usuarios WHERE Token='$token'");
         if (mysqli_num_rows($result) > 0) {
             return true;
         }
 
-        header('Location: /caminho/login.html?login=erro');
+        header('Location: /FreeCodex/Src/Views/html/login.html?login=erro');
     }
 ?>

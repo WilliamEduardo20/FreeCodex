@@ -169,6 +169,7 @@ form.form input[type="submit"] {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    line-height: 100%;
 }
 
 /*Configuração da Página para Mobile*/
