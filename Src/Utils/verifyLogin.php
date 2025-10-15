@@ -6,7 +6,7 @@
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
-    $query = "SELECT Id, Nome, Email, Telefone, DataNasc, Token, Status FROM usuarios WHERE Email = ?";
+    $query = "SELECT ID, Nome, Email, Telefone, DataNasc, Senha, Token, Status FROM usuarios WHERE Email = ?";
     $stmt = mysqli_prepare($conn, $query);
 
     mysqli_stmt_bind_param($stmt, 's', $email);
@@ -14,15 +14,15 @@
     $result = mysqli_stmt_get_result($stmt);
 
     if ($row = mysqli_fetch_assoc($result)) {
-        if (password_verify($senha, $row['senha'] && $row['status'] === 'a')) {
-           $_SESSION['id'] = $row['Id'];
+        if ($row['Status'] === 'a' && password_verify($senha, $row['Senha'])) {
+           $_SESSION['id'] = $row['ID'];
            $_SESSION['nome'] = $row['Nome'];
            $_SESSION['email'] = $row['Email'];
            $_SESSION['telefone'] = $row['Telefone'];
            $_SESSION['nascimento'] = $row['DataNasc'];
            $_SESSION['token'] = $row['Token'];
            $_SESSION['status'] = $row['Status'];
-           header('Location: /caminho/index.html');
+           header('Location: /FreeCodex/');
            exit;
         } else {
             header('Location: /FreeCodex/Src/Views/html/login.html?login=erro');

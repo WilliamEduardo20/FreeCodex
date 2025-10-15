@@ -5,12 +5,9 @@
     header('Content-Type: application/json; charset=UTF-8');
 
     session_start();
-    $method = $_POST['PUT_method'] ?? $_SERVER['REQUEST_METHOD'];
-    if ($method !== 'POST' && $method !== 'PUT') {
-        $method = 'DELETE';
-    }
+    $method = $_SERVER['REQUEST_METHOD'];
 
-    switch ($metohd) {
+    switch ($method) {
         case 'GET':
             # code...
             break;
@@ -27,7 +24,7 @@
                 exit;
             }
 
-            $query = "SELECT email FROM usuario WHERE email = ?";
+            $query = "SELECT Email FROM usuarios WHERE Email = ?";
             $stmt = mysqli_prepare($conn, $query);
             
             mysqli_stmt_bind_param($stmt, 's', $email);
@@ -42,12 +39,12 @@
             $token = tokenGenerate();
             $status = 'a';
             $senha = password_hash($senha, PASSWORD_DEFAULT);
-            $query = "INSERT INTO usuario (nome, email, telefone, data_nasc, senha, token, status) VALUE (?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO usuarios (Nome, Email, Telefone, DataNasc, Senha, Token, Status) VALUE (?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = mysqli_prepare($conn, $query);
             mysqli_stmt_bind_param($stmt, 'sssssss', $nome, $email, $telefone, $nascimento, $senha, $token, $status);
             if (mysqli_stmt_execute($stmt)) {
-                header('Location: /caminho/login.html');
+                header('Location: /FreeCodex/Src/Views/html/login.html');
             } else {
                 sendResponse(500, ['message' => 'Erro ao cadastrar: ' . mysqli_error($conn)]);
             }

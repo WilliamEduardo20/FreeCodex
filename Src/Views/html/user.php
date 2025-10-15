@@ -31,14 +31,14 @@
             <div class="info">
                 <form class="form" action="" method="get">
                     <label for="email">Nome</label>
-                    <input type="text" name="nome" id="nome" placeholder="Altere seu nome" disabled>
+                    <input type="text" name="nome" id="nome" placeholder="Altere seu nome" value="<?= $_SESSION['nome'] ?>" disabled>
                     <a href="#" id="alterarNome">Alterar</a>
-                    <label for="password">Senha</label>
-                    <input type="password" name="senha" id="password" placeholder="Altere sua senha" disabled>
-                    <a href="#" id="alterarSenha">Alterar</a>
                     <label for="email">E-mail</label>
-                    <input type="email" name="email" id="email" placeholder="Altere seu e-mail" disabled>
+                    <input type="email" name="email" id="email" placeholder="Altere seu e-mail" value="<?= $_SESSION['email'] ?>" disabled>
                     <a href="#" id="alterarEmail">Alterar</a>
+                    <label for="password">Senha</label>
+                    <input type="password" name="senha" id="password" placeholder="Altere sua senha" value="503105503105" disabled>
+                    <a href="#" id="alterarSenha">Alterar</a>
                     <input type="submit" value="Salvar">
                 </form>
             </div>
