@@ -101,7 +101,7 @@ confirmar.addEventListener("keyup", function () {
 });
 
 // Função para formatar o telefone no formato (XX) XXXXX-XXXX
-function formatarTelefone() {
+export function formatarTelefone() {
     let valor = telefone.value.replace(/\D/g, ''); // Remove tudo que não é número
     if (valor.length > 11) valor = valor.slice(0, 11); // Limita a 11 dígitos
 
