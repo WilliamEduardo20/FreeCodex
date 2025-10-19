@@ -57,7 +57,7 @@
                 header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorret');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;
@@ -89,7 +89,7 @@
                 header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorret');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;
@@ -123,7 +123,7 @@
                 header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorret');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;
