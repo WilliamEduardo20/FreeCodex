@@ -6,7 +6,7 @@
     $email = $_POST['email'] ?? '';
     $senha = $_POST['senha'] ?? '';
 
-    $query = "SELECT ID, Nome, Email, Telefone, DataNasc, Senha, Token, Status FROM usuarios WHERE Email = ?";
+    $query = "SELECT ID, Imagem, Nome, Email, Telefone, DataNasc, Senha, Token, Status FROM usuarios WHERE Email = ?";
     $stmt = mysqli_prepare($conn, $query);
 
     mysqli_stmt_bind_param($stmt, 's', $email);
@@ -16,6 +16,7 @@
     if ($row = mysqli_fetch_assoc($result)) {
         if ($row['Status'] === 'a' && password_verify($senha, $row['Senha'])) {
            $_SESSION['id'] = $row['ID'];
+           $_SESSION['imagem'] = $row['Imagem'];
            $_SESSION['nome'] = $row['Nome'];
            $_SESSION['email'] = $row['Email'];
            $_SESSION['telefone'] = $row['Telefone'];

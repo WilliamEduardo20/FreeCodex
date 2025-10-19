@@ -23,8 +23,8 @@
         <section class="container pad30">
             <div class="perfil">
                 <div class="foto-perfil">
-                    <img src="../../Assets/icons/logo.png" alt="">
-                    <i class="bi bi-camera"></i>
+                    <img src="<?= $_SESSION['imagem'] ?>" alt="">
+                    <i class="bi bi-camera" id="alterarImagem"></i>
                 </div>
                 <button onclick="window.location.href='/FreeCodex/Src/Utils/logoff.php'">Deslogar</button>
                 <a id="deletarConta" href="javascript:void(0)">Delete a sua conta</a>
@@ -49,6 +49,24 @@
             </div>
         </section>
     </main>
+
+    <!-- Modal para Alterar Imagem -->
+    <div class="modal-container" id="modalImagem">
+        <div class="modal-conteudo">
+            <div class="modal-cabecalho">
+                <span class="fechar-modal" data-modal="modalImagem">&times;</span>
+                <h2>Alterar Imagem de Perfil</h2>
+            </div>
+            <div class="modal-corpo">
+                <form id="formAlterarImagem" action="../../Utils/verifyChange.php" method="post">
+                    <input type="hidden" name="change" value="updateImagem">
+                    <label for="urlImagem">URL da Nova Imagem:</label>
+                    <input type="text" id="urlImagem" name="urlImagem" placeholder="https://exemplo.com/imagem.jpg" required>
+                    <button type="submit">Alterar</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal para Alterar Nome -->
     <div class="modal-container" id="modalNome">

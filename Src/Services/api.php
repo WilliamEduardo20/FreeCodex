@@ -16,16 +16,12 @@
             break;
 
         case 'POST':
+            $imagem = "../../Assets/icons/logo.png";
             $nome = request('nome');
             $email = request('email');
             $telefone = request('telefone');
             $nascimento = request('nascimento');
             $senha = request('senha');
-
-            if (empty($nome) || empty($email) || empty($telefone) || empty($nascimento) || empty($senha)) {
-                sendResponse(400, ['message' => 'Campos obrigatórios não preenchidos']);
-                exit;
-            }
 
             $query = "SELECT Email FROM usuarios WHERE Email = ?";
             $stmt = mysqli_prepare($conn, $query);
@@ -42,10 +38,10 @@
             $token = tokenGenerate();
             $status = 'a';
             $senha = password_hash($senha, PASSWORD_DEFAULT);
-            $query = "INSERT INTO usuarios (Nome, Email, Telefone, DataNasc, Senha, Token, Status) VALUE (?, ?, ?, ?, ?, ?, ?)";
+            $query = "INSERT INTO usuarios (Imagem, Nome, Email, Telefone, DataNasc, Senha, Token, Status) VALUE (?, ?, ?, ?, ?, ?, ?, ?)";
 
             $stmt = mysqli_prepare($conn, $query);
-            mysqli_stmt_bind_param($stmt, 'sssssss', $nome, $email, $telefone, $nascimento, $senha, $token, $status);
+            mysqli_stmt_bind_param($stmt, 'ssssssss', $imagem, $nome, $email, $telefone, $nascimento, $senha, $token, $status);
             if (mysqli_stmt_execute($stmt)) {
                 header('Location: /FreeCodex/Src/Views/html/login.html');
             } else {

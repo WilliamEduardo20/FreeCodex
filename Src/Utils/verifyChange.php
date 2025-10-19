@@ -12,6 +12,24 @@
     $change = request('change');
 
     switch ($change) {
+        case 'updateImagem':
+            $id = $_SESSION['id'];
+            $imagemNova = request('urlImagem');
+
+            $query = "UPDATE usuarios SET Imagem = ? WHERE ID = ?";
+            $stmt = mysqli_prepare($conn, $query);
+            mysqli_stmt_bind_param($stmt, 'si', $imagemNova, $id);
+
+            if (mysqli_stmt_execute($stmt)) {
+                $_SESSION['imagem'] = $imagemNova;
+            } else {
+                sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
+            }
+
+            header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
+            exit;
+            break;
+
         case 'updateNome':
             $id = $_SESSION['id'];
             $nomeNovo = request('novoNome');

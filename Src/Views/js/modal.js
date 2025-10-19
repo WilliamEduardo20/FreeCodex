@@ -48,12 +48,23 @@ export function modal() {
         }
     }
 
-    // Novos modais para alterações
+    // Função para trocar imagem (executada no lado do cliente antes do envio do formulário)
+    function trocarImagem() {
+        const url = document.getElementById('urlImagem').value;
+        if (url) {
+            document.getElementById('minhaImagem').src = url;
+        } else {
+            alert('Por favor, insira uma URL válida.');
+        }
+    }
+
+    // Lista de modais, incluindo o modal de imagem
     const modals = [
         { id: 'modalNome', abrirId: 'alterarNome' },
         { id: 'modalSenha', abrirId: 'alterarSenha' },
         { id: 'modalEmail', abrirId: 'alterarEmail' },
-        { id: 'modalTelefone', abrirId: 'alterarTelefone' }
+        { id: 'modalTelefone', abrirId: 'alterarTelefone' },
+        { id: 'modalImagem', abrirId: 'alterarImagem' }
     ];
 
     modals.forEach(m => {
@@ -83,6 +94,14 @@ export function modal() {
                     if (novaSenha && confirmarSenha) {
                         novaSenha.addEventListener('input', validarSenhas);
                         confirmarSenha.addEventListener('input', validarSenhas);
+                    }
+                }
+
+                // Aplica pré-visualização da imagem quando o modalImagem é aberto
+                if (m.id === 'modalImagem') {
+                    const urlImagemInput = document.getElementById('urlImagem');
+                    if (urlImagemInput) {
+                        urlImagemInput.addEventListener('input', trocarImagem);
                     }
                 }
             };
