@@ -1,27 +1,6 @@
 export function modal() {
-    // Modal de vídeo original
-    const modalVideo = document.getElementById('meuModal');
-    const botaoAbrirVideo = document.getElementById('abrirModal');
-
-    // Verifica se o modal de vídeo existe
-    if (modalVideo) {
-        const fecharVideo = modalVideo.querySelector('.fechar-modal');
-        
-        if (botaoAbrirVideo) {
-            botaoAbrirVideo.onclick = function() {
-                modalVideo.style.display = 'block';
-            };
-        }
-
-        if (fecharVideo) {
-            fecharVideo.onclick = function() {
-                modalVideo.style.display = 'none';
-            };
-        }
-    }
-
     // Função genérica para fechar modais ao clicar fora
-    window.onclick = function(event) {
+    window.onclick = function (event) {
         if (event.target.classList.contains('modal-container')) {
             event.target.style.display = 'none';
         }
@@ -61,7 +40,7 @@ export function modal() {
         if (modalElem && botaoAbrir) {
             const fecharModal = modalElem.querySelector('.fechar-modal');
 
-            botaoAbrir.onclick = function(event) {
+            botaoAbrir.onclick = function (event) {
                 event.preventDefault();
                 modalElem.style.display = 'block';
 
@@ -75,38 +54,7 @@ export function modal() {
             };
 
             if (fecharModal) {
-                fecharModal.onclick = function() {
-                    modalElem.style.display = 'none';
-                };
-            }
-
-            // Lógica para submissão dos forms
-            const form = modalElem.querySelector('form');
-            if (form) {
-                form.onsubmit = function(event) {
-                    event.preventDefault();
-                    if (m.id === 'modalNome') {
-                        const novoValor = document.getElementById('novoNome').value;
-                        if (novoValor) {
-                            document.getElementById('nome').value = novoValor;
-                        }
-                    } else if (m.id === 'modalSenha') {
-                        const novaSenha = document.getElementById('novaSenha').value;
-                        const confirmar = document.getElementById('confirmarSenha').value;
-                        if (novaSenha && novaSenha === confirmar) {
-                            document.getElementById('password').value = '********';
-                        }
-                    } else if (m.id === 'modalEmail') {
-                        const novoValor = document.getElementById('novoEmail').value;
-                        if (novoValor) {
-                            document.getElementById('email').value = novoValor;
-                        }
-                    } else if (m.id === 'modalTelefone') {
-                        const novoValor = document.getElementById('novoTelefone').value;
-                        if (novoValor) {
-                            document.getElementById('telefone').value = novoValor;
-                        }
-                    }
+                fecharModal.onclick = function () {
                     modalElem.style.display = 'none';
                 };
             }

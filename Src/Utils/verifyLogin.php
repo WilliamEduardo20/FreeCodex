@@ -20,6 +20,7 @@
            $_SESSION['email'] = $row['Email'];
            $_SESSION['telefone'] = $row['Telefone'];
            $_SESSION['nascimento'] = $row['DataNasc'];
+           $_SESSION['senha'] = $row['senha'];
            $_SESSION['token'] = $row['Token'];
            $_SESSION['status'] = $row['Status'];
            header('Location: /FreeCodex/');

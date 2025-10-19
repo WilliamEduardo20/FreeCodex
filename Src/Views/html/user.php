@@ -5,6 +5,7 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +17,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/user.css">
 </head>
+
 <body>
     <main class="esp-lat-ext">
         <section class="container pad30">
@@ -24,12 +26,12 @@
                     <img src="../../Assets/icons/logo.png" alt="">
                     <i class="bi bi-camera"></i>
                 </div>
-                <button>Deslogar</button>
-                <a href="">Delete a sua conta</a>
+                <button onclick="window.location.href='/FreeCodex/Src/Utils/logoff.php'">Deslogar</button>
+                <a id="deletarConta" href="javascript:void(0)">Delete a sua conta</a>
             </div>
             <div class="linha"></div>
             <div class="info">
-                <form class="form" action="" method="post">
+                <form class="form">
                     <label for="email">Nome</label>
                     <input type="text" name="nome" id="nome" placeholder="Altere seu nome" value="<?= $_SESSION['nome'] ?>" disabled>
                     <a href="#" id="alterarNome">Alterar</a>
@@ -40,9 +42,9 @@
                     <input type="tel" name="telefone" id="telefone" placeholder="Altere seu telefone" value="<?= $_SESSION['telefone'] ?>" disabled>
                     <a href="#" id="alterarTelefone">Alterar</a>
                     <label for="password">Senha</label>
-                    <input type="password" name="senha" id="password" placeholder="Altere sua senha" value="503105503105" disabled>
+                    <input type="password" name="senha" id="password" placeholder="Altere sua senha" value="********" disabled>
+                    <input type="hidden" name="senha_real" id="senha_real" value="<?= $_SESSION['senha'] ?>">
                     <a href="#" id="alterarSenha">Alterar</a>
-                    <input type="submit" value="Salvar">
                 </form>
             </div>
         </section>
@@ -56,7 +58,8 @@
                 <h2>Alterar Nome</h2>
             </div>
             <div class="modal-corpo">
-                <form id="formAlterarNome">
+                <form id="formAlterarNome" action="../../Utils/verifyChange.php" method="post">
+                    <input type="hidden" name="change" value="updateNome">
                     <label for="novoNome">Novo Nome:</label>
                     <input type="text" id="novoNome" name="novoNome" placeholder="Digite o novo nome" required>
                     <button type="submit">Alterar</button>
@@ -73,7 +76,8 @@
                 <h2>Alterar Senha</h2>
             </div>
             <div class="modal-corpo">
-                <form id="formAlterarSenha">
+                <form id="formAlterarSenha" action="../../Utils/verifyChange.php" method="post">
+                    <input type="hidden" name="change" value="updateSenha">
                     <label for="senhaAtual">Senha Atual:</label>
                     <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Digite a senha atual" required>
                     <label for="novaSenha">Nova Senha:</label>
@@ -94,11 +98,12 @@
                 <h2>Alterar E-mail</h2>
             </div>
             <div class="modal-corpo">
-                <form id="formAlterarEmail">
+                <form id="formAlterarEmail" action="../../Utils/verifyChange.php" method="post">
+                    <input type="hidden" name="change" value="updateEmail">
                     <label for="novoEmail">Novo E-mail:</label>
                     <input type="email" id="novoEmail" name="novoEmail" placeholder="Digite o novo e-mail" required>
                     <label for="senhaAtual">Senha Atual:</label>
-                    <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Digite a senha atual" required>
+                    <input type="password" name="senhaAtual" placeholder="Digite a senha atual" required>
                     <button type="submit">Alterar</button>
                 </form>
             </div>
@@ -113,11 +118,12 @@
                 <h2>Alterar Telefone</h2>
             </div>
             <div class="modal-corpo">
-                <form id="formAlterarTelefone">
+                <form id="formAlterarTelefone" action="../../Utils/verifyChange.php" method="post">
+                    <input type="hidden" name="change" value="updateTelefone">
                     <label for="novoTelefone">Novo Telefone:</label>
                     <input type="text" id="novoTelefone" name="novoTelefone" placeholder="Digite o novo telefone" required>
                     <label for="senhaAtual">Senha Atual:</label>
-                    <input type="password" id="senhaAtual" name="senhaAtual" placeholder="Digite a senha atual" required>
+                    <input type="password" name="senhaAtual" placeholder="Digite a senha atual" required>
                     <button type="submit">Alterar</button>
                 </form>
             </div>
@@ -208,24 +214,8 @@
         </nav>
     </aside>
 
-    <script type="module" src="../js/index.js">
-        function formatarTelefone() {
-            let valor = telefone.value.replace(/\D/g, '');
-            if (valor.length > 11) valor = valor.slice(0, 11);
-
-            if (valor.length > 2) {
-                valor = `(${valor.slice(0, 2)}) ${valor.slice(2)}`;
-            }
-            if (valor.length > 8) {
-                valor = `${valor.slice(0, 9)}-${valor.slice(9)}`;
-            }
-            if (valor.length > 15) {
-                valor = valor.slice(0, 14);
-            }
-
-            telefone.value = valor;
-        }
-        document.getElementById("novoTelefone").addEventListener("input", formatarTelefone);
-    </script>
+    <script type="module" src="../js/index.js"></script>
+    <script type="module" src="../js/request.js"></script>
 </body>
+
 </html>
