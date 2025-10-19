@@ -84,6 +84,7 @@
                     <input type="password" id="novaSenha" name="novaSenha" placeholder="Digite a nova senha" required>
                     <label for="confirmarSenha">Confirmar Nova Senha:</label>
                     <input type="password" id="confirmarSenha" name="confirmarSenha" placeholder="Confirme a nova senha" required>
+                    <p id="mensagemSenha" style="margin-bottom: 10px;"></p>
                     <button type="submit">Alterar</button>
                 </form>
             </div>

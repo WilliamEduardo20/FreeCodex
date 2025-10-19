@@ -24,6 +24,30 @@ export function modal() {
         input.value = valor;
     }
 
+    // Função para validar senhas
+    function validarSenhas() {
+        const novaSenha = document.getElementById('novaSenha');
+        const confirmarSenha = document.getElementById('confirmarSenha');
+        const mensagem = document.getElementById('mensagemSenha');
+        const submitButton = document.querySelector('#formAlterarSenha button[type="submit"]');
+
+        if (novaSenha.value !== confirmarSenha.value) {
+            mensagem.textContent = 'Senhas diferentes';
+            mensagem.style.color = 'red';
+            mensagem.style.fontSize = '20px';
+            mensagem.style.fontWeight = '500';
+            mensagem.style.textAlign = 'center';
+            submitButton.disabled = true;
+        } else {
+            mensagem.textContent = 'Senhas iguais!';
+            mensagem.style.color = 'green';
+            mensagem.style.fontSize = '20px';
+            mensagem.style.fontWeight = '500';
+            mensagem.style.textAlign = 'center';
+            submitButton.disabled = false;
+        }
+    }
+
     // Novos modais para alterações
     const modals = [
         { id: 'modalNome', abrirId: 'alterarNome' },
@@ -49,6 +73,16 @@ export function modal() {
                     const telefoneInput = document.getElementById('novoTelefone');
                     if (telefoneInput) {
                         telefoneInput.addEventListener('input', () => formatarTelefone(telefoneInput));
+                    }
+                }
+
+                // Aplica validação de senhas quando o modalSenha é aberto
+                if (m.id === 'modalSenha') {
+                    const novaSenha = document.getElementById('novaSenha');
+                    const confirmarSenha = document.getElementById('confirmarSenha');
+                    if (novaSenha && confirmarSenha) {
+                        novaSenha.addEventListener('input', validarSenhas);
+                        confirmarSenha.addEventListener('input', validarSenhas);
                     }
                 }
             };
