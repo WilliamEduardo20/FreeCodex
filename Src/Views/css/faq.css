@@ -67,41 +67,58 @@ main {
     gap: 120px;
     z-index: 2;
 }
+
+/* Container de Perguntas do FAQ */
+.faq .info .perguntas {
+    width: 90%;
+}
+
 /* Título FAQ */
 .perguntas h1 {
     border-bottom: 2px solid var(--cor-terciaria);
     width: fit-content;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-size: 2.5pc;
     font-family: Arial, Helvetica, sans-serif;
 }
-/* Layout do FAQ */
+
+/* Imagem do FAQ */
 .faq .info img {
     width: 45%;
     max-height: 400px;
     object-fit: contain;
     border-radius: 0;
 }
-.faq .info .perguntas {
-    width: 90%;
-}
 
-/* Perguntas + botão alinhados */
-.item {
+/* Perguntas */
+summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 12px 0;
-    font-size: 22px;
+    list-style: none;
+    font-size: 1.4pc;
+    margin-bottom: 15px;
+    margin-top: 15px;
+    margin-right: 12px;
     font-family: Arial, Helvetica, sans-serif;
-    line-height: 1.4;
-}
-.item button {
-    border: none;
-    background: none;
-    font-size: 25px;
     cursor: pointer;
-    margin-right: 10px;
+}
+details p {
+    font-size: 1.2pc;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 15px;
+}
+
+/* Símbolo + depois do texto quando fechado */
+summary::after {
+    content: " +";
+    margin-left: 0.5em;
+}
+
+/* Símbolo - depois do texto quando aberto */
+details[open]>summary::after {
+    content: " -";
+    margin-right: 3px;
 }
 
 /* Setas */
