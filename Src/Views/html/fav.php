@@ -122,7 +122,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="./faq.html">
+                    <a href="./faq.php">
                         <span class="icon">
                             <i class="bi bi-question-circle-fill"></i>
                         </span>
@@ -159,7 +159,7 @@
                     </a>
                 </li>
                 <li class="lista">
-                    <a href="./faq.html">
+                    <a href="./faq.php">
                         <span class="icone">
                             <i class="bi bi-question-circle-fill"></i>
                         </span>

@@ -1,6 +1,17 @@
+<?php
+    require_once('../../Utils/controllerFAQ.php');
+    session_start();
+
+    start();
+
+    if (isset($_GET['action'])) {
+        if ($_GET['action'] === 'next') nextPage();
+        elseif ($_GET['action'] === 'prev') previousPage();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,7 +23,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/faq.css">
 </head>
-
 <body>
     <header></header>
     <main class="esp-lat-ext faq">
@@ -20,35 +30,13 @@
             <img src="../../Assets/images/ilustracao.png" alt="">
             <div class="perguntas">
                 <h1>FAQ</h1>
-                <details>
-                    <summary>Como alterar minha senha?</summary>
-                    <p>Para alterar a senha clique no icone de usuário e clique no texto alterar embaixo da caixa senha, preencha as informações e clique em salvar.</p>
-                </details>
-                <hr>
-                <details>
-                    <summary>Como alterar meu nome?</summary>
-                    <p>Ótimo artigo!</p>
-                </details>
-                <hr>
-                <details>
-                    <summary>Quais linguagens estão disponíveis?</summary>
-                    <p>Ótimo artigo!</p>
-                </details>
-                <hr>
-                <details>
-                    <summary>Como entar em contato?</summary>
-                    <p>Ótimo artigo!</p>
-                </details>
-                <hr>
-                <details>
-                    <summary>Como mudar minha foto de perfil?</summary>
-                    <p>Ótimo artigo!</p>
-                </details>
-                <hr>
+                <div class="separador">
+                    <?php creatFAQ(); ?>
+                </div>
                 <div class="setas">
-                    <button class="circle"><i class="bi bi-arrow-left"></i></button>
-                    <span>1/2</span>
-                    <button class="circle"><i class="bi bi-arrow-right"></i></button>
+                    <a href="?action=prev" class="circle"><i class="bi bi-arrow-left"></i></a>
+                    <span><?= $_SESSION['page']; ?></span>
+                    <a href="?action=next" class="circle"><i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
@@ -152,5 +140,4 @@
 
     <script type="module" src="../js/index.js"></script>
 </body>
-
 </html>

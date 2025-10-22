@@ -79,6 +79,7 @@ section.container {
 
 .perfil .foto-perfil {
     position: relative;
+    width: 100%;
 }
 
 .perfil .foto-perfil img {
@@ -558,7 +559,7 @@ aside {
     }
 
     .perfil .foto-perfil img {
-        width: 70%;
+        width: 100%;
         border-radius: 70%;
     }
 

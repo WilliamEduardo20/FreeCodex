@@ -64,6 +64,7 @@ main {
     justify-content: space-between;
     padding: 60px;
     width: 100%;
+    height: 100%;
     gap: 120px;
     z-index: 2;
 }
@@ -71,6 +72,7 @@ main {
 /* Container de Perguntas do FAQ */
 .faq .info .perguntas {
     width: 90%;
+    height: 100%;
 }
 
 /* Título FAQ */
@@ -91,20 +93,24 @@ main {
 }
 
 /* Perguntas */
+.separador {
+    height: 50%;
+    overflow-y: scroll;
+}
 summary {
     display: flex;
     justify-content: space-between;
     align-items: center;
     list-style: none;
-    font-size: 1.4pc;
-    margin-bottom: 15px;
-    margin-top: 15px;
+    font-size: 1.2pc;
+    margin-bottom: 14px;
+    margin-top: 14px;
     margin-right: 12px;
     font-family: Arial, Helvetica, sans-serif;
     cursor: pointer;
 }
 details p {
-    font-size: 1.2pc;
+    font-size: 1pc;
     font-family: Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
 }
@@ -130,7 +136,7 @@ details[open]>summary::after {
     margin-top: 20px;
     background: none;
 }
-.setas button i {
+.setas a i {
     margin-top: 3px;
 }
 
