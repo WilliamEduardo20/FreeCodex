@@ -17,10 +17,9 @@
 
 body{
     background: linear-gradient(to bottom, var(--cor-secundaria), var(--cor-principal));
-    height: auto;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
 }
 
 /*Clases de uso Geral*/

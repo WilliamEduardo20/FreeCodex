@@ -160,7 +160,7 @@
             </div>
             <ul>
                 <li class="item-menu">
-                    <a href="../../../index.html">
+                    <a href="../../../index.php">
                         <span class="icon">
                             <i class="bi bi-house-fill"></i>
                         </span>
@@ -197,7 +197,7 @@
         <nav class="navegacao">
             <ul>
                 <li class="lista">
-                    <a href="../../../index.html">
+                    <a href="../../../index.php">
                         <span class="icone">
                             <i class="bi bi-house-fill"></i>
                         </span>
@@ -236,5 +236,4 @@
     <script type="module" src="../js/index.js"></script>
     <script type="module" src="../js/request.js"></script>
 </body>
-
 </html>

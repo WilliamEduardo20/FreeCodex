@@ -1,3 +1,12 @@
+<?php 
+    require_once('./Src/Utils/controllerCards.php');
+    initialize();
+
+    if (isset($_GET['more'])) {
+        loadMore();
+    }
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -29,36 +38,9 @@
             </div>
         </div>
         <section class="container mar-bott10">
-            <div class="componente">
-                <img class="componente-imagem" src="./Src/Assets/images/home.png" alt="image component">
-                <div class="componente-info">
-                    <div class="componente-tipos">
-                        <p class="componente-tipo">Screen</p>
-                        <p class="componente-tipo">HTML</p>
-                        <p class="componente-tipo">CSS</p>
-                    </div>
-                    <div class="componente-opcoes">
-                        <i class="bi bi-copy"></i>
-                        <button class="componente-btn"></button>
-                    </div>
-                </div>
-            </div>
-            <div class="componente">
-                <img class="componente-imagem" src="./Src/Assets/images/home.png" alt="image component">
-                <div class="componente-info">
-                    <div class="componente-tipos">
-                        <p class="componente-tipo">Screen</p>
-                        <p class="componente-tipo">HTML</p>
-                        <p class="componente-tipo">CSS</p>
-                    </div>
-                    <div class="componente-opcoes">
-                        <i class="bi bi-copy"></i>
-                        <button class="componente-btn"></button>
-                    </div>
-                </div>
-            </div>
+            <?php displayCards(); ?>
         </section>
-        <button class="btn-ver-mais mar-bott10">VER MAIS</button>
+        <button class="btn-ver-mais mar-bott10" onclick="location.href='?more=1'">VER MAIS</button>
     </main>
 
     <footer></footer>
