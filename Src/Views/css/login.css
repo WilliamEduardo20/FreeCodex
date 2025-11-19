@@ -121,6 +121,7 @@ body{
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    gap: 10px;
 }
 .login section .logar h1{
     font-size: xx-large;
@@ -161,7 +162,7 @@ form.form input:focus {
 form.form input::placeholder {
     color: #51585C;
 }
-form.form input[type="submit"] {
+form.form button {
     width: 150px;
     height: 40px;
     background-color: var(--cor-terciaria);
