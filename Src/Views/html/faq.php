@@ -65,7 +65,7 @@
             </div>
             <ul>
                 <li class="item-menu">
-                    <a href="../../../index.php">
+                    <a href="../../../index.html">
                         <span class="icon">
                             <i class="bi bi-house-fill"></i>
                         </span>
@@ -73,7 +73,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="./fav.php">
+                    <a href="./fav.html">
                         <span class="icon">
                             <i class="bi bi-star-fill"></i>
                         </span>
@@ -102,7 +102,7 @@
         <nav class="navegacao">
             <ul>
                 <li class="lista">
-                    <a href="../../../index.php">
+                    <a href="../../../index.html">
                         <span class="icone">
                             <i class="bi bi-house-fill"></i>
                         </span>
@@ -110,7 +110,7 @@
                     </a>
                 </li>
                 <li class="lista">
-                    <a href="./fav.php">
+                    <a href="./fav.html">
                         <span class="icone">
                             <i class="bi bi-star-fill"></i>
                         </span>

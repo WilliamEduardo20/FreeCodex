@@ -8,6 +8,10 @@
     --cor-destaque: white;
 }
 
+.favorito-ativo {
+    background-color: #de9100 !important;
+}
+
 /*Configurações da Página*/
 * {
     margin: 0;

@@ -1,4 +1,4 @@
-export function modal() {
+function modal() {
     // Função genérica para fechar modais ao clicar fora
     window.onclick = function (event) {
         if (event.target.classList.contains('modal-container')) {
@@ -114,3 +114,4 @@ export function modal() {
         }
     });
 }
+modal();

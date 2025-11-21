@@ -8,6 +8,10 @@
   --cor-destaque: white;
 }
 
+.favorito-ativo {
+    background-color: #de9100 !important;
+}
+
 /*Configurações da Página*/
 * {
     margin: 0;
@@ -38,6 +42,7 @@ body{
 .container{
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     gap: 10px;
 }
 
@@ -140,7 +145,7 @@ main{
 .componente-btn{
     padding: 10px;
     margin-right: 8px;
-    background-color: rgb(222, 145, 0);
+    background-color: var(--cor-quartenaria);
     clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
     border: none;
     cursor: pointer;

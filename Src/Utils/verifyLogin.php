@@ -24,14 +24,14 @@
            $_SESSION['senha'] = $row['senha'];
            $_SESSION['token'] = $row['Token'];
            $_SESSION['status'] = $row['Status'];
-           header('Location: /FreeCodex/');
+           header('Location: /FreeCodex2/');
            exit;
         } else {
-            header('Location: /FreeCodex/Src/Views/html/login.html?login=erro');
+            header('Location: /FreeCodex2/Src/Views/html/login.html?login=erro');
             exit;
         }
     } else {
-        header('Location: /FreeCodex/Src/Views/html/login.html?Erro=email-ou-senha-incorretos');
+        header('Location: /FreeCodex2/Src/Views/html/login.html?Erro=email-ou-senha-incorretos');
         exit;
     }
 
