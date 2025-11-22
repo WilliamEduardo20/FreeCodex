@@ -26,7 +26,7 @@
                 sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
             }
 
-            header('Location: /FreeCodex2/Src/Views/html/user.php?sucesso');
+            header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
             exit;
             break;
 
@@ -44,7 +44,7 @@
                 sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
             }
 
-            header('Location: /FreeCodex2/Src/Views/html/user.php?sucesso');
+            header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
             exit;
             break;
 
@@ -72,10 +72,10 @@
                     sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
                 }
 
-                header('Location: /FreeCodex2/Src/Views/html/user.php?sucesso');
+                header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex2/Src/Views/html/user.php?change=senha-incorreta');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;
@@ -104,10 +104,10 @@
                     sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
                 }
 
-                header('Location: /FreeCodex2/Src/Views/html/user.php?sucesso');
+                header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex2/Src/Views/html/user.php?change=senha-incorreta');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;
@@ -138,10 +138,10 @@
                     sendResponse(500, ['message' => 'Errro ao atualizar: ' . mysqli_error($conn)]);
                 }
 
-                header('Location: /FreeCodex2/Src/Views/html/user.php?sucesso');
+                header('Location: /FreeCodex/Src/Views/html/user.php?sucesso');
                 exit;
             } else {
-                header('Location: /FreeCodex2/Src/Views/html/user.php?change=senha-incorreta');
+                header('Location: /FreeCodex/Src/Views/html/user.php?change=senha-incorreta');
                 exit;
             }
             break;

@@ -26,7 +26,7 @@
                     <img src="<?= $_SESSION['imagem'] ?>" alt="">
                     <i class="bi bi-camera" id="alterarImagem"></i>
                 </div>
-                <button onclick="window.location.href='/freecodex2/Src/Utils/logoff.php'">Deslogar</button>
+                <button onclick="window.location.href='/FreeCodex/Src/Utils/logoff.php'">Deslogar</button>
                 <a id="deletarConta" href="javascript:void(0)">Delete a sua conta</a>
             </div>
             <div class="linha"></div>
@@ -168,7 +168,7 @@
                     </a>
                 </li>
                 <li class="item-menu">
-                    <a href="./fav.html">
+                    <a href="./fav.php">
                         <span class="icon">
                             <i class="bi bi-star-fill"></i>
                         </span>
@@ -205,7 +205,7 @@
                     </a>
                 </li>
                 <li class="lista">
-                    <a href="./fav.html">
+                    <a href="./fav.php">
                         <span class="icone">
                             <i class="bi bi-star-fill"></i>
                         </span>

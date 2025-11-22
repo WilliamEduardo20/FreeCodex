@@ -4,6 +4,6 @@
     session_unset();
 
     session_destroy();
-    header('Location: /FreeCodex2/index.html');
+    header('Location: /FreeCodex/index.html');
     exit;
 ?>

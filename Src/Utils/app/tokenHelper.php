@@ -20,7 +20,7 @@
             return true;
         }
 
-        header('Location: /freecodex2/Src/Views/html/login.html?login=erro');
+        header('Location: /FreeCodex/Src/Views/html/login.html?login=erro');
         exit;
     }
 ?>
