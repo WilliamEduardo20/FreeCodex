@@ -25,7 +25,7 @@
                 <i class="bi bi-search"></i>
             </div>
             <div class="input-buscar">
-                <input type="text" placeholder="O que você procura?" id="">
+                <input type="text" placeholder="O que você procura?" id="pesquisa">
             </div>
             <div class="btn-fechar">
                 <i class="bi bi-x"></i>
