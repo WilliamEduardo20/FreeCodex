@@ -89,6 +89,14 @@
                     </a>
                 </li>
                 <li class="item-menu">
+                    <a href="./frames.html">
+                        <span class="icon">
+                            <i class="bi bi-link-45deg"></i>
+                        </span>
+                        <span class="txt-link">Framewoks</span>
+                    </a>
+                </li>
+                <li class="item-menu">
                     <a href="./user.php">
                         <span class="icon">
                             <i class="bi bi-person-circle"></i>
@@ -123,6 +131,14 @@
                             <i class="bi bi-question-circle-fill"></i>
                         </span>
                         <span class="texto">FAQ</span>
+                    </a>
+                </li>
+                <li class="lista">
+                    <a href="./frames.html">
+                        <span class="icone">
+                            <i class="bi bi-link-45deg"></i>
+                        </span>
+                        <span class="texto">Framewoks</span>
                     </a>
                 </li>
                 <li class="lista">

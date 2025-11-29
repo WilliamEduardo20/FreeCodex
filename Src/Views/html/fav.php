@@ -27,7 +27,7 @@
             <div class="input-buscar">
                 <input type="text" placeholder="O que você procura?" id="pesquisa">
             </div>
-            <div class="btn-fechar">
+            <div class="btn-fechar" id="btn-apagar">
                 <i class="bi bi-x"></i>
             </div>
         </div>
@@ -73,6 +73,14 @@
                     </a>
                 </li>
                 <li class="item-menu">
+                    <a href="./frames.html">
+                        <span class="icon">
+                            <i class="bi bi-link-45deg"></i>
+                        </span>
+                        <span class="txt-link">Framewoks</span>
+                    </a>
+                </li>
+                <li class="item-menu">
                     <a href="./user.php">
                         <span class="icon">
                             <i class="bi bi-person-circle"></i>
@@ -110,6 +118,14 @@
                     </a>
                 </li>
                 <li class="lista">
+                    <a href="./frames.html">
+                        <span class="icone">
+                            <i class="bi bi-link-45deg"></i>
+                        </span>
+                        <span class="texto">Framewoks</span>
+                    </a>
+                </li>
+                <li class="lista">
                     <a href="./user.php">
                         <span class="icone">
                             <i class="bi bi-person-circle"></i>
@@ -124,5 +140,6 @@
 
     <script type="module" src="../js/index.js"></script>
     <script type="module" src="../js/controllerFav.js"></script>
+    <script type="module" src="../js/controllerSearch.js"></script>
 </body>
 </html>

@@ -1,10 +1,10 @@
 const indicador = document.querySelector(".indicador");
-const input = document.querySelector("input[type='password']");
+const input = document.getElementById("password");
 const fraco = document.querySelector(".fraco");
 const medio = document.querySelector(".medio");
 const forte = document.querySelector(".forte");
 const text = document.querySelector(".text");
-const showBtn = document.querySelector(".showBtn");
+const botoesMostrar = document.querySelectorAll(".toggleSenha");
 const telefone = document.getElementById("telefone");
 
 // Regex
@@ -64,15 +64,22 @@ function trigger() {
             text.textContent = "Sua senha está forte";
             text.className = "text forte";
         }
+        
+botoesMostrar.forEach(btn => {
+    btn.addEventListener("click", () => {
+        const campo = btn.previousElementSibling; // input de senha correspondente
 
-        // Mostrar/ocultar senha
-        showBtn.onclick = function () {
-            if (input.type == "password") {
-                input.type = "text";
-            } else {
-                input.type = "password";
-            }
+        if (campo.type === "password") {
+            campo.type = "text";
+            btn.classList.remove("bi-eye-slash");
+            btn.classList.add("bi-eye");
+        } else {
+            campo.type = "password";
+            btn.classList.remove("bi-eye");
+            btn.classList.add("bi-eye-slash");
         }
+    });
+});
 
     } else {
         // Esconde tudo se campo vazio
@@ -120,3 +127,16 @@ function formatarTelefone() {
 
 // Aplica a formatação ao digitar ou colar
 telefone.addEventListener("input", formatarTelefone);
+
+// Impede o envio se as senhas forem diferentes
+function validarFormulario() {
+    const senhaVal = senha.value.trim();
+    const confirmarVal = confirmar.value.trim();
+
+    if (senhaVal !== confirmarVal) {
+        alert("As senhas não coincidem! Corrija antes de cadastrar.");
+        return false; // impede submissão
+    }
+
+    return true; // permite enviar
+}

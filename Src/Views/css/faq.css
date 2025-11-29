@@ -369,51 +369,117 @@ aside {
 }
 
 .navegacao ul li:nth-child(1).ativo~.indicador {
-    transform: translateX(calc(-104px));
+    transform: translateX(calc(-139px));
 }
 
 .navegacao ul li:nth-child(2).ativo~.indicador {
-    transform: translateX(calc(-35px * 1));
+    transform: translateX(calc(-70px * 1));
 }
 
 .navegacao ul li:nth-child(3).ativo~.indicador {
-    transform: translateX(calc(18px * 2));
+    transform: translateX(calc(0px * 2));
 }
 
 .navegacao ul li:nth-child(4).ativo~.indicador {
-    transform: translateX(calc(35px * 3));
+    transform: translateX(calc(23px * 3));
+}
+
+.navegacao ul li:nth-child(5).ativo~.indicador {
+    transform: translateX(calc(47px * 3));
 }
 
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {
     /*Classes Globais*/
     .esp-lat-ext {
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 15px;
+        margin-right: 15px;
     }
 
-    main .container {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 10px;
+    /* Página */
+    body {
+        height: auto;
+        padding-bottom: 120px;
     }
 
-    /*Corpo do Site*/
+    /* Container Principal */
     main {
-        margin-bottom: 105px;
+        width: 95%;
+        height: auto;
+        padding: 20px;
+        margin-top: 20px;
+        margin-bottom: 120px;
     }
 
-    /*Ajusta tamanho card*/
-    .container div.componente {
+    /* Layout do FAQ */
+    .info {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 20px;
+        gap: 25px;
+        height: auto;
         width: 100%;
     }
 
-    /*Desativa Menu Navegação Lateral*/
-    nav.menu-lateral {
-        width: 0px;
+    /* Perguntas */
+    .faq .info .perguntas {
+        width: 100%;
+        height: auto;
     }
 
-    /*Ativa Menu de Navegação Mobile*/
+    .perguntas h1 {
+        font-size: 26px;
+        text-align: center;
+        margin: 0 auto 15px auto;
+    }
+
+    .separador {
+        height: auto;
+        max-height: 300px;
+        overflow-y: auto;
+        padding-right: 10px;
+    }
+
+    summary {
+        font-size: 16px;
+        margin: 12px 0;
+    }
+
+    details p {
+        font-size: 14px;
+    }
+
+    /* Imagem do FAQ */
+    .faq .info img {
+        width: 75%;
+        max-height: 250px;
+        object-fit: contain;
+    }
+
+    /* Ajuste Logo e Wave */
+    .logo {
+        position: static;
+        width: 100px;
+        margin: 0 auto;
+    }
+
+    .wave {
+        width: 150%;
+        bottom: -20px;
+    }
+
+    .wave-text {
+        font-size: 12px;
+    }
+
+    /* Desativa Menu Lateral */
+    nav.menu-lateral {
+        width: 0px;
+        opacity: 0;
+    }
+
+    /* Ativa Menu Mobile */
     aside {
         height: 105px;
     }

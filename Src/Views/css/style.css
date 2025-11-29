@@ -45,6 +45,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    width: 100%;
 }
 
 /*Corpo do Site*/
@@ -355,20 +356,25 @@ aside {
 }
 
 .navegacao ul li:nth-child(1).ativo~.indicador {
-    transform: translateX(calc(-104px));
+    transform: translateX(calc(-139px));
 }
 
 .navegacao ul li:nth-child(2).ativo~.indicador {
-    transform: translateX(calc(-35px * 1));
+    transform: translateX(calc(-70px * 1));
 }
 
 .navegacao ul li:nth-child(3).ativo~.indicador {
-    transform: translateX(calc(18px * 2));
+    transform: translateX(calc(0px * 2));
 }
 
 .navegacao ul li:nth-child(4).ativo~.indicador {
-    transform: translateX(calc(35px * 3));
+    transform: translateX(calc(23px * 3));
 }
+
+.navegacao ul li:nth-child(5).ativo~.indicador {
+    transform: translateX(calc(47px * 3));
+}
+
 
 /*Configuração da Página para Mobile*/
 @media only screen and (max-width:730px) {

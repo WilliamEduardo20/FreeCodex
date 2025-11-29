@@ -158,7 +158,6 @@ body {
 
 /* Formulário */
 form.form {
-    display: flex;
     flex-direction: column;
     justify-content: space-between;
     position: relative;
@@ -194,7 +193,6 @@ form.form input:focus {
     box-shadow: 0 0 6px rgba(0, 119, 255, 0.3);
 }
 
-
 form.form input[type="submit"] {
     width: 180px;
     height: 45px;
@@ -208,13 +206,24 @@ form.form input[type="submit"] {
     cursor: pointer;
 }
 
-form.form .showBtn {
+/* Ícone de mostrar/ocultar senha */
+.campo-senha {
+    position: relative;
+    width: 100%;
+}
+
+.campo-senha input {
+    width: 100%;
+    padding-right: 40px; /* espaço para o ícone */
+}
+
+.campo-senha .toggleSenha {
     position: absolute;
-    right: 14px;
-    top: 135%;
-    transform: translateY(0);
+    right: 12px;
+    top: 40%;
+    transform: translateY(-50%);
     cursor: pointer;
-    font-size: 18px;
+    font-size: 20px;
     color: #333;
     z-index: 10;
 }
@@ -266,77 +275,137 @@ form.form .text.forte { color: #23ad5c; }
 
 /* Configuração da Página para Mobile */
 @media only screen and (max-width:730px) {
+    /* Configuração da Página */
+    body {
+        overflow: auto;
+        height: auto;
+        padding: 10px;
+    }
+
     /* Tela de Cadastro */
     .cadastro {
-        display: flex;
-        align-items: center;
-        justify-content: center;
         width: 100%;
-        height: 100%;
+        height: auto;
         background-color: transparent;
+        display: flex;
+        justify-content: center;
     }
 
     .cadastro section {
         display: flex;
         flex-direction: column-reverse;
         width: 100%;
-        height: 80%;
+        height: auto;
         background-color: var(--cor-destaque);
+        border-radius: 10px;
+        overflow: hidden;
     }
 
     /* Inscreva-se */
     .cadastro section .logue {
         background-color: #6BA3FF;
         width: 100%;
-        height: 40%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-between;
+        height: auto;
+        padding: 20px;
+        gap: 10px;
     }
 
     .cadastro section .logue .logo img {
-        width: 20px;
+        width: 22px;
     }
 
     .cadastro section .logue h1 {
-        font-size: 25pt;
-        color: var(--cor-destaque);
+        font-size: 20pt;
+    }
+
+    .cadastro section .logue h2 {
+        font-size: 11pt;
+    }
+
+    .cadastro section .logue h3 {
+        font-size: 10pt;
+    }
+
+    .cadastro section .logue .opcoes {
+        gap: 10px;
+    }
+
+    .cadastro section .logue .opcoes button {
+        height: 45px;
     }
 
     .cadastro section .logue .opcoes button p {
-        font-size: 15pt;
+        font-size: 14pt;
     }
 
     /* Cadastrar */
     .cadastro section .cadastrar {
         width: 100%;
-        height: 60%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: space-around;
+        padding: 20px;
+        height: auto;
     }
 
     .cadastro section .cadastrar h1 {
-        font-size: 30pt;
+        font-size: 22pt;
+        width: 100%;
+        text-align: center;
     }
 
     .cadastro section .cadastrar a {
-        font-size: 10pt;
+        font-size: 11pt;
+        text-align: center;
+        width: 100%;
+        display: block;
+        margin-top: 5px;
     }
 
     /* Formulário */
     form.form {
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        align-items: center;
         width: 100%;
-        height: 100%;
+        height: auto;
+        overflow: visible;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
     }
 
     form.form label {
-        font-size: 20px;
+        font-size: 15px;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    form.form input {
+        font-size: 14px;
+        padding: 12px;
+        width: 100%;
+    }
+
+    form.form input[type="submit"] {
+        width: 100%;
+        height: 48px;
+        font-size: 15px;
+        margin-top: 15px;
+    }
+
+    /* Botão de mostrar senha */
+    form.form .showBtn {
+        right: 10px;
+        top: 50%;
+        transform: translateY(20px);
+        font-size: 18px;
+    }
+
+    /* Indicador de força da senha */
+    form.form .indicador {
+        display: flex;
+        height: 8px;
+        margin-top: -5px;
+        margin-bottom: 10px;
+    }
+
+    form.form .text {
+        font-size: 14px;
+        margin-top: -5px;
     }
 }
