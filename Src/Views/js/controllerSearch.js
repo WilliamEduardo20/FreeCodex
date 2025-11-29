@@ -18,7 +18,7 @@ input.addEventListener('keyup', function(e) {
         } else {
             async function pesquisaCards() {
                 const dados = new URLSearchParams();
-                var typeSearch = (href === 'http://localhost/FreeCodex/index.html' || href.startsWith('http://localhost/FreeCodex/')) ? 'publica' : 'privada';
+                var typeSearch = (window.location.href == 'http://localhost/FreeCodex/index.html' || window.location.href =='http://localhost/FreeCodex/' ? 'publica' : 'privada');
                 dados.append('typeSearch', typeSearch);
                 dados.append('text', termo);
             
