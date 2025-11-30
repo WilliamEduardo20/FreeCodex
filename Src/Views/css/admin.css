@@ -24,6 +24,10 @@ body {
     max-width: 1180px;
     margin: 0 auto;
     padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 /* ==================== HEADER & MENU ==================== */
@@ -392,6 +396,47 @@ form button:hover {
     box-shadow: 0 12px 30px rgba(255,37,0,0.4);
 }
 
+/* Botão flutuante de logout */
+.btn-logout {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: linear-gradient(135deg, #FF2500, #FF7100);
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
+    padding: 16px 28px;
+    border-radius: 50px;
+    box-shadow: 0 8px 25px rgba(255, 37, 0, 0.4);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    z-index: 9998;
+    transition: all 0.4s ease;
+    border: none;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+.btn-logout i {
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.btn-logout:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(255, 37, 0, 0.5);
+    background: linear-gradient(135deg, #e02000, #e06500);
+}
+
+.btn-logout:hover i {
+    transform: translateX(6px);
+}
+
+.btn-logout:active {
+    transform: translateY(-2px);
+}
+
 /* ==================== RESPONSIVO ==================== */
 @media (max-width: 768px) {
     section { padding: 70px 5%; }
@@ -412,5 +457,29 @@ form button:hover {
         background: #fff;
         border-radius: 16px;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    }
+    .container, .container1 {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 20px;
+        display: block;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .btn-logout {
+        bottom: 20px;
+        right: 20px;
+        padding: 14px 22px;
+        font-size: 15px;
+    }
+    
+    .btn-logout span {
+        display: none;
+    }
+    
+    .btn-logout i {
+        font-size: 22px;
     }
 }

@@ -1,4 +1,13 @@
-<?php require_once '../../Config/conection.php'; ?>
+<?php 
+    require_once '../../Config/conection.php';
+    session_start();
+
+    if ($_SESSION['email'] == 'regressor@gmail.com' || $_SESSION['email'] == 'srpacheco@gmail.com'|| $_SESSION['email'] == 'picanha@gmail.com') {
+        # code...
+    } else {
+        header('Location: /FreeCodex/?login=erro');
+    }
+?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -408,6 +417,12 @@
                 <button type="submit">Cadastrar</button>
             </form>
         </div>
+
+        <!-- BOTÃO DE DESLOGAR ESTILIZADO E FIXO -->
+        <a href="/FreeCodex/Src/Utils/logoff.php" class="btn-logout">
+            <i class="bi bi-box-arrow-right"></i>
+            Sair do Painel
+        </a>
     </section>
 
     <?php mysqli_close($conn); ?>
