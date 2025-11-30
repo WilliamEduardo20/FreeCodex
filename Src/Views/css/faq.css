@@ -457,20 +457,15 @@ aside {
         object-fit: contain;
     }
 
-    /* Ajuste Logo e Wave */
-    .logo {
-        position: static;
-        width: 100px;
-        margin: 0 auto;
-    }
-
     .wave {
         width: 150%;
-        bottom: -20px;
+        bottom: -10px;
     }
 
     .wave-text {
         font-size: 12px;
+        width: 100%;
+        text-align: center;
     }
 
     /* Desativa Menu Lateral */
@@ -482,5 +477,10 @@ aside {
     /* Ativa Menu Mobile */
     aside {
         height: 105px;
+    }
+
+    /* Desaparece Elementos */
+    .info img, .logo {
+        display: none;
     }
 }
