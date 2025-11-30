@@ -403,9 +403,10 @@ aside {
 
     /*Desativa a opção de copiar do card*/
     .componente-opcoes i {
-        font-size: 100%;
-        visibility: hidden;
-        cursor: pointer;
+        display: none;
+    }
+    .componente .bi.bi-browser-chrome {
+        display: block;
     }
 
     /*Desativa Menu Navegação Lateral*/

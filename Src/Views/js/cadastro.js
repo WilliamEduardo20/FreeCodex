@@ -63,8 +63,16 @@ function trigger() {
             text.style.display = "block";
             text.textContent = "Sua senha está forte";
             text.className = "text forte";
-        }
-        
+        }      
+    } else {
+        // Esconde tudo se campo vazio
+        fraco.classList.remove("active");
+        medio.classList.remove("active");
+        forte.classList.remove("active");
+        text.style.display = "none";
+    }
+}
+
 botoesMostrar.forEach(btn => {
     btn.addEventListener("click", () => {
         const campo = btn.previousElementSibling; // input de senha correspondente
@@ -80,16 +88,6 @@ botoesMostrar.forEach(btn => {
         }
     });
 });
-
-    } else {
-        // Esconde tudo se campo vazio
-        fraco.classList.remove("active");
-        medio.classList.remove("active");
-        forte.classList.remove("active");
-        text.style.display = "none";
-    }
-
-}
 
 const senha = document.getElementById("password");
 const confirmar = document.getElementById("confirme");

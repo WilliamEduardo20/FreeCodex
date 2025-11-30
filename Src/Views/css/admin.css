@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Titillium Web', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1080px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.container1 { 
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #000;
+    width: 100%;
+    padding: 15px 4%;
+    position: sticky;
+    top: 0;
+    z-index: 9999;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.menu {
+    width: 100%;
+    text-align: center;
+}
+
+.menu nav a {
+    color: #c4c4c4;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 5px;
+    display: inline-block;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.menu nav a::after {
+    content: "";
+    width: 0;
+    height: 4px;
+    background: linear-gradient(45deg, #FF2500, #FF7100);
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s;
+}
+
+.menu nav a:hover::after {
+    width: 70%;
+}
+
+.menu nav a:hover {
+    color: #fff;
+}
+
+.social button {
+    width: 40px;
+    height: 40px;
+    margin: 0 8px;
+    border: none;
+    background: linear-gradient(45deg, #FF2500, #FF7100);
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.social button:hover {
+    transform: scale(0.9);
+}
+
+/* ============ SEÇÕES E TABELAS RESPONSIVAS ============ */
+section {
+    padding: 90px 4%;
+    border-bottom: 1px solid #ddd;
+}
+
+section h2 {
+    font-size: 2.2em;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+section h3 {
+    font-size: 1.6em;
+    color: #FF2500;
+    margin: 40px 0 20px;
+    text-align: center;
+}
+
+/* Container com scroll horizontal apenas quando necessário */
+.table-container {
+    overflow-x: auto;
+    margin: 30px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    background: white;
+}
+
+table {
+    width: 100%;
+    min-width: 800px; /* Garante que a tabela não encolha demais */
+    border-collapse: collapse;
+    background: white;
+}
+
+th {
+    background: linear-gradient(45deg, #FF2500, #FF7100);
+    color: white;
+    padding: 16px 12px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 16px;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #eee;
+    font-size: 15px;
+    color: #333;
+    word-wrap: break-word;
+    max-width: 300px; /* Limita colunas largas */
+}
+
+/* Quebra de texto longo (URLs, hashes, etc.) */
+td {
+    overflow-wrap: break-word;
+    word-break: break-all;
+}
+th.no {
+    word-break: normal;
+}
+
+tr:nth-child(even) {
+    background-color: #fdf4f2;
+}
+
+tr:hover {
+    background-color: #ffe8e0;
+    transition: 0.2s;
+}
+
+/* ============ FORMULÁRIOS ============ */
+form {
+    max-width: 700px;
+    margin: 30px auto;
+    padding: 30px;
+    background: #f8f8f8;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+form input[type="text"],
+form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: border 0.3s;
+}
+
+form input:focus,
+form textarea:focus {
+    border-color: #FF2500;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(255, 37, 0, 0.1);
+}
+
+form textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+form button {
+    background: linear-gradient(45deg, #FF2500, #FF7100);
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+form button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 37, 0, 0.4);
+}
+
+/* ============ RESPONSIVO ============ */
+@media screen and (max-width: 1110px) {
+    .menu, .social { display: none; }
+    .logo { width: 100%; text-align: center; }
+    #btn-menu, #menu-mobile { display: block; }
+}
+
+@media screen and (max-width: 768px) {
+    section { padding: 60px 5%; }
+    section h2 { font-size: 1.9em; }
+    .table-container { 
+        border-radius: 8px;
+        margin: 20px -5%;
+        width: 100vw;
+        padding: 0 10px;
+    }
+    th, td { font-size: 14px; padding: 10px 8px; }
+    form { padding: 20px; }
+}

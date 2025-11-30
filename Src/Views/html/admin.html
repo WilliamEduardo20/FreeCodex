@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CodePiece - Soluções Incríveis para Você</title>
+    <meta name="description" content="">
+    <meta name="robots" content="index, follow">
+    <meta name="keywords" content="">
+    <link rel="canonical" href="https://www.meusite.com.br">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="../css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="menu">
+                <nav>
+                    <a href="#usuarios">Usuários</a>
+                    <a href="#baiusuario">BaiUsuario</a>
+                    <a href="#copusuario">CopUsuario</a>
+                    <a href="#linguagens">Linguagens</a>
+                    <a href="#categorias">Categorias</a>
+                    <a href="#perguntas">Perguntas</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+ 
+    <section id="usuarios">
+        <div class="container1">
+            <h2>Usuários</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th class="no">ID</th>
+                        <th class="no">Imagem</th>
+                        <th class="no">Nome</th>
+                        <th class="no">Email</th>
+                        <th class="no">Telefone</th>
+                        <th class="no">DataNasc</th>
+                        <th class="no">Senha</th>
+                        <th class="no">Token</th>
+                        <th class="no">Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>https://images.steamusercontent.com/ugc/12462324270535986301/F92E97002A3C1CF3DC23C5D1DDAF239C181E5379/?imw=268&imh=268&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true</td>
+                        <td>Seo Eun Hyun</td>
+                        <td>regressor@gmail.com</td>
+                        <td>(18) 9999-99999</td>
+                        <td>2007-12-20</td>
+                        <td>$2y$10$h08px6R02ZhoL8l4EGnzvetv2c0OLM4JRC7XiOUgsIcg3GKUjHZGC</td>
+                        <td>b744d80d7a2ceb5c2b49e3c92987215e</td>
+                        <td>a</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="baiusuario">
+        <div class="container1">
+            <h2>BaiUsuario</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>UsuarioID</th>
+                        <th>CodigoSalvo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="copusuario">
+        <div class="container1">
+            <h2>CopUsuario</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>UsuarioID</th>
+                        <th>CodigoSalvo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tabela vazia no dump SQL, então sem rows -->
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <section id="linguagens">
+        <div class="container1">
+            <h2>Linguagens</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>CSS</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>HTML</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>JS</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>PHP</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Cadastrar Nova Linguagem</h3>
+            <form action="cadastrar_linguagem.php" method="POST"> <!-- Assumindo um endpoint PHP -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="categorias">
+        <div class="container1">
+            <h2>Categorias</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nome</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>tela</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>efeito</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>funcionalidade</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>componente</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Cadastrar Nova Categoria</h3>
+            <form action="cadastrar_categoria.php" method="POST"> <!-- Assumindo um endpoint PHP -->
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="perguntas">
+        <div class="container1">
+            <h2>Perguntas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Pergunta</th>
+                        <th>Resposta</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Qual é a sintaxe básica para declarar uma variável em PHP?</td>
+                        <td>Em PHP, as variáveis começam com $ seguido do nome, por exemplo: $nome = \"João\";</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Consulta para selecionar todos os registros de uma tabela?</td>
+                        <td>Use SELECT * FROM nome_da_tabela; para selecionar todas as colunas e registros da tabela.</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>O que é um prepared statement e por que utilizá-lo?</td>
+                        <td>Um prepared statement é uma instrução SQL pré-compilada que protege contra injeção de SQL, melhorando a segurança e desempenho nas consultas.</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Como funciona o laço de repetição for em C++?</td>
+                        <td>O for executa um bloco de código repetidas vezes, com inicialização, condição e incremento, por exemplo: for(int i=0; i<10; i++) { /* código */ }.</td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Qual é a diferença entre GET e POST em requisições HTTP?</td>
+                        <td>GET envia dados pela URL visível e tem limite de tamanho; POST envia dados no corpo da requisição, adequado para dados sensíveis e maiores.</td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Como prevenir injeção de SQL em minhas aplicações PHP?</td>
+                        <td>Utilizando prepared statements (instruções preparadas) e bind params para separar dados da consulta SQL.</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Qual comando SQL é usado para inserir dados em uma tabela?</td>
+                        <td>O comando INSERT INTO tabela (colunas) VALUES (valores); insere dados na tabela.</td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Como faço para conectar o PHP ao banco de dados MySQL?</td>
+                        <td>Use mysqli_connect(\'host\', \'usuario\', \'senha\', \'banco\'); para estabelecer conexão com o banco.</td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Qual a estrutura básica de uma função em JavaScript?</td>
+                        <td>function nomeFuncao(parametros) { /* código */ } define uma função.</td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Como interpretar e manipular arrays em C++ usando a STL?</td>
+                        <td>Use std::vector<T> para arrays dinâmicos e funções como push_back(), size() para manipulação.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Cadastrar Nova Pergunta</h3>
+            <form action="cadastrar_pergunta.php" method="POST"> <!-- Assumindo um endpoint PHP -->
+                <label for="pergunta">Pergunta:</label>
+                <input type="text" id="pergunta" name="pergunta" required>
+                <label for="resposta">Resposta:</label>
+                <textarea id="resposta" name="resposta" required></textarea>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>
