@@ -100,7 +100,7 @@
                 $telefone = trim($input['telefone'] ?? '');
                 $nascimento = $input['nascimento'] ?? '';
                 $imagem = $input['imagem'] ?? '';
-                $status = $input['status'] ?? 'i';
+                $status = $input['status'] ?? 'd';
 
                 if ($id <= 0 || empty($nome) || empty($email)) {
                     sendResponse(400, ['message' => 'Dados inválidos']);

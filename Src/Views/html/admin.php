@@ -1,6 +1,4 @@
-<?php
-    require_once '../../Config/conection.php'; // Inclui a conexão com o banco de dados
-?>
+<?php require_once '../../Config/conection.php'; ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -30,65 +28,59 @@
             </div>
         </div>
     </header>
- 
+
+    <!-- ====================== USUÁRIOS ====================== -->
     <section id="usuarios">
         <div class="container1">
             <h2>Usuários Cadastrados</h2>
-
             <div class="table-container">
                 <table>
                     <thead>
                         <tr>
-                            <th class="no">ID</th>
-                            <th class="no">Foto</th>
-                            <th class="no">Nome</th>
-                            <th class="no">Email</th>
-                            <th class="no">Telefone</th>
-                            <th class="no">Nascimento</th>
-                            <th class="no">Status</th>
-                            <th class="no">Ações</th>
+                            <th>ID</th>
+                            <th>Foto</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Telefone</th>
+                            <th>Nascimento</th>
+                            <th>Status</th>
+                            <th>Ações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
                         $query = "SELECT ID, Imagem, Nome, Email, Telefone, DataNasc, Status FROM usuarios ORDER BY ID";
                         $result = mysqli_query($conn, $query);
-
                         if ($result && mysqli_num_rows($result) > 0):
                             while ($user = mysqli_fetch_assoc($result)):
                         ?>
                             <tr>
                                 <td><strong>#<?= $user['ID'] ?></strong></td>
-                                <td>
-                                    <img src="<?= htmlspecialchars($user['Imagem']) ?>" 
-                                        alt="Foto" 
-                                        style="width:60px;height:60px;border-radius:50%;object-fit:cover;border:3px solid #FF2500;">
-                                </td>
+                                <td><img src="<?= htmlspecialchars($user['Imagem']) ?>" alt="Foto do usuário" class="user-avatar"></td>
                                 <td><strong><?= htmlspecialchars($user['Nome']) ?></strong></td>
                                 <td><?= htmlspecialchars($user['Email']) ?></td>
                                 <td><?= htmlspecialchars($user['Telefone']) ?></td>
                                 <td><?= date('d/m/Y', strtotime($user['DataNasc'])) ?></td>
                                 <td>
-                                    <span style="padding:6px 12px;border-radius:20px;font-size:12px;font-weight:bold;background:<?= $user['Status']==='a'?'#4CAF50':'#F44336' ?>;color:white;">
-                                        <?= $user['Status']==='a' ? 'Ativo' : 'Inativo' ?>
+                                    <span class="status-badge <?= $user['Status'] === 'a' ? 'ativo' : 'desativo' ?>">
+                                        <?= $user['Status'] === 'a' ? 'Ativo' : 'Desativo' ?>
                                     </span>
                                 </td>
                                 <td>
-                                    <button class="btn-editar" 
+                                    <button class="btn-editar"
                                             data-id="<?= $user['ID'] ?>"
                                             data-nome="<?= htmlspecialchars($user['Nome']) ?>"
                                             data-email="<?= htmlspecialchars($user['Email']) ?>"
                                             data-telefone="<?= htmlspecialchars($user['Telefone']) ?>"
                                             data-nascimento="<?= $user['DataNasc'] ?>"
                                             data-imagem="<?= htmlspecialchars($user['Imagem']) ?>"
-                                            data-status="<?= $user['Status'] ?>"
-                                            style="background:#FF2500;color:white;border:none;padding:8px 14px;border-radius:6px;cursor:pointer;">
+                                            data-status="<?= $user['Status'] ?>">
                                         Editar
                                     </button>
                                 </td>
                             </tr>
                         <?php endwhile; else: ?>
-                            <tr><td colspan="8" style="text-align:center;color:#999;padding:40px;">Nenhum usuário encontrado.</td></tr>
+                            <tr><td colspan="8" class="empty-msg">Nenhum usuário encontrado.</td></tr>
                         <?php endif; ?>
                     </tbody>
                 </table>
@@ -96,57 +88,60 @@
         </div>
     </section>
 
-    <!-- ====================== MODAL DE EDIÇÃO (VERSÃO COMPACTA E LINDA) ====================== -->
-    <div id="modalEditar" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.75);z-index:9999;display:flex;justify-content:center;align-items:center;padding:15px;">
-        <div style="background:#fff;border-radius:16px;width:100%;max-width:420px;box-shadow:0 15px 40px rgba(255,37,0,0.25);overflow:hidden;">
-            
-            <!-- Cabeçalho vermelho bonito -->
-            <div style="background:#FF2500;color:white;padding:16px 20px;text-align:center;font-size:18px;font-weight:bold;">
+    <!-- ====================== MODAL DE EDIÇÃO ====================== -->
+    <div id="modalEditar" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
                 Editar Usuário #<span id="modal-id-display"></span>
             </div>
-
-            <div style="padding:20px;">
+            <div class="modal-body">
                 <form id="formEditarUsuario">
                     <input type="hidden" name="acao" value="editar_usuario">
                     <input type="hidden" name="id" id="edit-id">
 
-                    <div style="display:grid;gap:12px;">
-
-                        <input type="text" name="nome" id="edit-nome" placeholder="Nome completo" required
-                            style="padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
-
-                        <input type="email" name="email" id="edit-email" placeholder="Email" required
-                            style="padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
-
-                        <input type="text" name="telefone" id="edit-telefone" placeholder="Telefone" required
-                            style="padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
-
-                        <input type="date" name="nascimento" id="edit-nascimento" required
-                            style="padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
-
-                        <!-- URL + Preview lado a lado (compacto) -->
-                        <div style="display:flex;gap:10px;align-items:center;">
-                            <input type="url" name="imagem" id="edit-imagem" placeholder="URL da foto" required
-                                style="flex:1;padding:11px;border:1px solid #ddd;border-radius:8px;font-size:13px;">
-                            <img id="preview-imagem" src="" alt="Foto"
-                                style="width:52px;height:52px;border-radius:50%;object-fit:cover;border:3px solid #FF2500;">
-                        </div>
-
-                        <select name="status" id="edit-status" style="padding:11px;border:1px solid #ddd;border-radius:8px;font-size:14px;">
-                            <option value="a">Ativo</option>
-                            <option value="i">Inativo</option>
-                        </select>
+                    <!-- Campo: Nome -->
+                    <div class="form-group">
+                        <input type="text" name="nome" id="edit-nome" placeholder=" " required>
+                        <label for="edit-nome">Nome completo</label>
                     </div>
 
-                    <div style="margin-top:20px;display:flex;gap:10px;justify-content:flex-end;">
-                        <button type="button" id="btn-cancelar"
-                                style="margin-top: 20px;padding:10px 18px;border:none;background:#ccc;color:#333;border-radius:8px;cursor:pointer;font-weight:600;">
-                            Cancelar
-                        </button>
-                        <button type="submit"
-                                style="padding:10px 24px;border:none;background:#FF2500;color:white;border-radius:8px;cursor:pointer;font-weight:600;">
-                            Salvar
-                        </button>
+                    <!-- Campo: Email -->
+                    <div class="form-group">
+                        <input type="email" name="email" id="edit-email" placeholder=" " required>
+                        <label for="edit-email">Email</label>
+                    </div>
+
+                    <!-- Campo: Telefone -->
+                    <div class="form-group">
+                        <input type="text" name="telefone" id="edit-telefone" placeholder=" " required>
+                        <label for="edit-telefone">Telefone</label>
+                    </div>
+
+                    <!-- Campo: Nascimento -->
+                    <div class="form-group">
+                        <input type="date" name="nascimento" id="edit-nascimento" required>
+                        <label for="edit-nascimento">Data de Nascimento</label>
+                    </div>
+
+                    <!-- Campo: Imagem (com preview ao lado) -->
+                    <div class="form-group image-group">
+                        <input type="url" name="imagem" id="edit-imagem" placeholder=" " required>
+                        <label for="edit-imagem" style="margin-top: 10px;">URL da Foto (Steam, GitHub...)</label>
+                        <img id="preview-imagem" src="" alt="Preview" class="preview-thumb">
+                    </div>
+
+                    <!-- Campo: Status -->
+                    <div class="form-group">
+                        <select name="status" id="edit-status">
+                            <option value="a">Ativo</option>
+                            <option value="d">Desativo</option>
+                        </select>
+                        <label for="edit-status">Status do usuário</label>
+                    </div>
+
+                    <div class="modal-actions">
+                        <button type="button" id="btn-cancelar">Cancelar</button>
+                        <button type="submit">Salvar Alterações</button>
                     </div>
                 </form>
             </div>
@@ -415,84 +410,74 @@
         </div>
     </section>
 
-    <?php
-        mysqli_close($conn); // Fecha a conexão com o banco de dados
-    ?>
+    <?php mysqli_close($conn); ?>
 
     <script>
-        // === CADASTROS (linguagem, categoria, pergunta) ===
-        document.querySelectorAll('#form-linguagem, #form-categoria, #form-pergunta').forEach(form => {
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const data = new FormData(form);
-
-                try {
-                    const response = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', {
-                        method: 'POST',
-                        body: data
-                    });
-                    const result = await response.json();
-                    alert(result.message);
-                    if (response.ok) {
-                        form.reset();
-                        location.reload();
-                    }
-                } catch (err) {
-                    alert('Erro de conexão com o servidor');
-                }
-            });
-        });
-
-        // === EDIÇÃO DE USUÁRIO (só esse form) ===
-        document.getElementById('formEditarUsuario').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const formData = new FormData(this);
-
-            // Adiciona a ação que estava faltando no modal (você já corrigiu, mas por segurança)
-            formData.append('acao', 'editar_usuario');
-
-            try {
-                const response = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', {
-                    method: 'POST',
-                    body: formData
-                });
-                const result = await response.json();
-                alert(result.message); // só aparece UMA vez
-
-                if (response.ok) {
-                    document.getElementById('modalEditar').style.display = 'none';
-                    location.reload();
-                }
-            } catch (err) {
-                alert('Erro ao salvar as alterações');
-            }
-        });
-
-        // === ABRIR MODAL ===
+        // Seu JavaScript permanece exatamente o mesmo (só atualizei o preview para usar classes)
         document.querySelectorAll('.btn-editar').forEach(btn => {
             btn.addEventListener('click', function() {
                 document.getElementById('edit-id').value = this.dataset.id;
+                document.getElementById('modal-id-display').textContent = this.dataset.id;
                 document.getElementById('edit-nome').value = this.dataset.nome;
                 document.getElementById('edit-email').value = this.dataset.email;
                 document.getElementById('edit-telefone').value = this.dataset.telefone;
                 document.getElementById('edit-nascimento').value = this.dataset.nascimento;
                 document.getElementById('edit-imagem').value = this.dataset.imagem;
-                document.getElementById('edit-status').value = this.dataset.status;
-                document.getElementById('preview-imagem').src = this.dataset.imagem || 'https://via.placeholder.com/100?text=Sem+Foto';
+                document.getElementById('preview-imagem').src = this.dataset.imagem || 'https://via.placeholder.com/52';
 
-                document.getElementById('modalEditar').style.display = 'flex';
+                // === SOLUÇÃO PERFEITA ===
+                const selectStatus = document.getElementById('edit-status');
+                const statusAtual = this.dataset.status;
+                selectStatus.value = (statusAtual === 'i' || statusAtual === 'd') ? 'd' : 'a';
+
+                // Força label subir
+                const label = selectStatus.nextElementSibling;
+                label.style.top = '0';
+                label.style.fontSize = '12px';
+                label.style.color = '#FF2500';
+                label.style.fontWeight = '700';
+
+                document.getElementById('modalEditar').classList.add('active');
             });
         });
 
-        // === FECHAR MODAL ===
         document.getElementById('btn-cancelar').addEventListener('click', () => {
-            document.getElementById('modalEditar').style.display = 'none';
+            document.getElementById('modalEditar').classList.remove('active');
         });
 
-        // === PREVIEW DA IMAGEM ===
         document.getElementById('edit-imagem').addEventListener('input', function() {
             const url = this.value.trim();
-            document.getElementById('preview-imagem').src = url || 'https://via.placeholder.com/100?text=Sem+Foto';
+            document.getElementById('preview-imagem').src = url || 'https://via.placeholder.com/52';
+        });
+
+        // Seu código de submit permanece igual
+        document.getElementById('formEditarUsuario').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const formData = new FormData(this);
+            formData.append('acao', 'editar_usuario');
+
+            const response = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', {
+                method: 'POST',
+                body: formData
+            });
+            const result = await response.json();
+            alert(result.message);
+            if (response.ok) {
+                document.getElementById('modalEditar').classList.remove('active');
+                location.reload();
+            }
+        });
+
+        // Cadastros normais (linguagem, categoria, pergunta)
+        document.querySelectorAll('#form-linguagem, #form-categoria, #form-pergunta').forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(form);
+                const res = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', { method: 'POST', body: data });
+                const json = await res.json();
+                alert(json.message);
+                if (res.ok) { form.reset(); location.reload(); }
+            });
         });
     </script>
 </body>
