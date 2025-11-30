@@ -1,0 +1,57 @@
+body {
+    background: #0f1b3d;
+    font-family: "Poppins", sans-serif;
+    padding: 30px;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.alert {
+    width: 90%;
+    max-width: 600px;
+    padding: 15px 20px;
+    margin: 18px auto;
+    border-radius: 12px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: fadeIn 0.4s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.alert svg {
+    width: 24px;
+    height: 24px;
+}
+
+/* TIPOS */
+.success {
+    background: #e6ffed;
+    border-left: 6px solid #2ecc71;
+    color: #1e7c4a;
+}
+.error {
+    background: #ffe6e6;
+    border-left: 6px solid #e74c3c;
+    color: #a1271e;
+}
+.warning {
+    background: #fff7e6;
+    border-left: 6px solid #f1c40f;
+    color: #8a6d00;
+}
+.info {
+    background: #e6f3ff;
+    border-left: 6px solid #3498db;
+    color: #1f4e79;
+}
