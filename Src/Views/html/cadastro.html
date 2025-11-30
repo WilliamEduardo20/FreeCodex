@@ -47,11 +47,10 @@
                     <label for="telefone">Telefone:</label>
                     <input type="tel" id="telefone" name="telefone" placeholder="(XX) XXXXX-XXXX">
                     <label for="password">Senha</label>
-                    <input onkeyup="trigger()" type="password" name="senha" maxlength="16" id="password"
-                        placeholder="Digite sua senha" required>
-                    <span class="showBtn">
-                        <i class="bi bi-eye-slash"></i>
-                    </span>
+                    <div class="campo-senha">
+                        <input onkeyup="trigger()" type="password" name="senha" maxlength="16" id="password" placeholder="Digite sua senha" required>
+                        <i class="bi bi-eye-slash toggleSenha" data-input="password"></i>
+                    </div>
                     <div class="indicador">
                         <span class="fraco"></span>
                         <span class="medio"></span>
@@ -59,8 +58,10 @@
                     </div>
                     <div class="text">Sua senha está fraca</div>
                     <label for="confirme">Confirme a senha</label>
-                    <input type="password" name="confirme" maxlength="15" id="confirme"
-                        placeholder="Digite novamente senha" required>
+                    <div class="campo-senha">
+                        <input type="password" name="confirme" maxlength="16" id="confirme" placeholder="Digite novamente sua senha" required>
+                        <i class="bi bi-eye-slash toggleSenha" data-input="confirme"></i>
+                    </div>
                     <p id="mensagem"></p>
                     <input type="submit" value="Cadastrar">
                 </form>
