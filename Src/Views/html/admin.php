@@ -5,7 +5,7 @@
     if ($_SESSION['email'] == 'regressor@gmail.com' || $_SESSION['email'] == 'srpacheco@gmail.com'|| $_SESSION['email'] == 'picanha@gmail.com') {
         # code...
     } else {
-        header('Location: /FreeCodex/?login=erro');
+        header('Location: /?login=erro');
     }
 ?>
 
@@ -33,6 +33,7 @@
                     <a href="#linguagens">Linguagens</a>
                     <a href="#categorias">Categorias</a>
                     <a href="#perguntas">Perguntas</a>
+                    <a href="https://freecodex.com.br" target="_blank" rel="noopener">Site</a>
                 </nav>
             </div>
         </div>
@@ -134,7 +135,7 @@
 
                     <!-- Campo: Imagem (com preview ao lado) -->
                     <div class="form-group image-group">
-                        <input type="url" name="imagem" id="edit-imagem" placeholder=" " required>
+                        <input type="text" name="imagem" id="edit-imagem" placeholder=" " required>
                         <label for="edit-imagem" style="margin-top: 10px;">URL da Foto (Steam, GitHub...)</label>
                         <img id="preview-imagem" src="" alt="Preview" class="preview-thumb">
                     </div>
@@ -301,7 +302,8 @@
     <section id="linguagens">
         <div class="container1">
             <h2>Linguagens</h2>
-            <table>
+            <div class="table-container">
+              <table>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -325,7 +327,8 @@
                         mysqli_free_result($result);
                     ?>
                 </tbody>
-            </table>
+              </table>
+            </div>
             <h3>Cadastrar Nova Linguagem</h3>
             <!-- Cadastrar Linguagem -->
             <form id="form-linguagem">
@@ -340,7 +343,8 @@
     <section id="categorias">
         <div class="container1">
             <h2>Categorias</h2>
-            <table>
+            <div class="table-container">
+              <table>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -364,7 +368,8 @@
                         mysqli_free_result($result);
                     ?>
                 </tbody>
-            </table>
+              </table>
+            </div>
             <h3>Cadastrar Nova Categoria</h3>
             <!-- Cadastrar Categoria -->
             <form id="form-categoria">
@@ -379,7 +384,8 @@
     <section id="perguntas">
         <div class="container1">
             <h2>Perguntas</h2>
-            <table>
+            <div class="table-container">
+              <table>
                 <thead>
                     <tr>
                         <th>ID</th>
@@ -405,7 +411,8 @@
                         mysqli_free_result($result);
                     ?>
                 </tbody>
-            </table>
+              </table>
+            </div>
             <h3>Cadastrar Nova Pergunta</h3>
             <!-- Cadastrar Pergunta -->
             <form id="form-pergunta">
@@ -419,7 +426,7 @@
         </div>
 
         <!-- BOTÃO DE DESLOGAR ESTILIZADO E FIXO -->
-        <a href="/FreeCodex/Src/Utils/logoff.php" class="btn-logout">
+        <a href="/Src/Utils/logoff.php" class="btn-logout">
             <i class="bi bi-box-arrow-right"></i>
             Sair do Painel
         </a>
@@ -471,7 +478,7 @@
             const formData = new FormData(this);
             formData.append('acao', 'editar_usuario');
 
-            const response = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', {
+            const response = await fetch('https://FreeCodex.com.br/Src/Services/apiAdimin.php', {
                 method: 'POST',
                 body: formData
             });
@@ -488,7 +495,7 @@
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
                 const data = new FormData(form);
-                const res = await fetch('http://localhost/FreeCodex/Src/Services/apiAdimin.php', { method: 'POST', body: data });
+                const res = await fetch('https://FreeCodex.com.br/Src/Services/apiAdimin.php', { method: 'POST', body: data });
                 const json = await res.json();
                 alert(json.message);
                 if (res.ok) { form.reset(); location.reload(); }
